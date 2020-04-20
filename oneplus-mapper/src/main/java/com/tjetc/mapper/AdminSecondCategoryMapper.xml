@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjetc.mapper.AdminSecondCategoryMapper">
+    <insert id="add" parameterType="com.tjetc.pojo.SecondCategory">
+        insert into secondcategory(scname,cid) values (#{scname},#{cid})
+
+    </insert>
+    <select id="getById" parameterType="int" resultType="com.tjetc.pojo.SecondCategory">
+        select * from secondcategory where id=#{value }
+
+    </select>
+    <select id="getByCid" parameterType="int" resultType="com.tjetc.pojo.SecondCategory">
+        select * from secondcategory where cid=#{value }
+
+    </select>
+    <update id="update" parameterType="com.tjetc.pojo.SecondCategory">
+        update secondcategory set scname=#{scname},cid=#{cid} where id=#{id}
+    </update>
+    <delete id="delete"  parameterType="int">
+
+        delete from secondcategory where id=#{value}
+    </delete>
+    <select id="getTrueall"  resultType="com.tjetc.pojo.SecondCategory">
+        select * from secondcategory
+
+    </select>
+    <select id="validname" parameterType="string" resultType="com.tjetc.pojo.SecondCategory">
+        select * from secondcategory where scname = #{value}
+
+    </select>
+    <select id="getByName" parameterType="string" resultType="com.tjetc.pojo.SecondCategory">
+        select * from secondcategory where scname = #{value}
+
+    </select>
+    <select id="list" parameterType="string" resultType="com.tjetc.pojo.SecondCategory">
+        select sc.*,c.cname from secondcategory sc,category c where scname like '%${value}%' and sc.cid=c.id
+
+    </select>
+
+
+
+
+
+
+</mapper>

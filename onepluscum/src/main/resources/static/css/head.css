@@ -1,0 +1,210 @@
+.layui-nav {
+	background-color: white;
+}
+
+.logoImg {
+	height: 40px;
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	color: black;
+	margin-bottom: 0px;
+	margin-top: 15px;
+	margin-left: 10px;
+	cursor: pointer;
+	/*background-color: red;*/
+}
+
+.scicon {
+	width: 25px;
+	height: 25px;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	color: black;
+	margin-bottom: 0px;
+	margin-top: 15px;
+	margin-left: 10px;
+	cursor: pointer;
+	/*background-color: red;*/
+}
+
+.icon:hover {
+	color: red;
+}
+
+.icon_yijia {
+	width: 30px;
+	height: 30px;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	color: black;
+	margin-bottom: 0px;
+	margin-top: 15px;
+	margin-left: 10px;
+	cursor: pointer;
+	color: red;
+	/*background-color: red;*/
+}
+
+.iconfontadmin {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.navhead {
+	height: 60px;
+	background-color: white;
+	box-shadow: 0px 1px 3px #aaaaaa;
+	display: flex;
+	/*overflow: hidden;*/
+	width: 100%;
+	z-index: 999;
+}
+
+.head_ul {
+	background-color: white;
+	width: 700px;
+	height: 60px;
+	margin-left: 200px;
+	text-align: center;
+}
+/*导航栏文字标题*/
+.head_ul_li {
+	float: left;
+	/*width: 100px;*/
+	height: 60px;
+	font-size: 14px;
+	font-family: MYingHei W5, SlateForOnePlusRegular, Microsoft Yahei;
+	display: inline-block;
+	line-height: 60px;
+	text-align: center;
+	padding-left: 30px;
+}
+
+.head_ul_li:hover .listTwo {
+	display: block;
+}
+
+.dh {
+	width: 100%;
+	height: 3px;
+	float: left;
+	margin-top: -3px
+}
+
+.head_ul_li:hover .dh {
+	background-color: red;
+}
+
+.listTwo {
+	width: 100%;
+	height: 100px;
+	box-shadow: 0px 1px 3px #aaaaaa;
+	position: absolute;
+	left: 0px;
+	top: 61px;
+	background-color: white;
+	margin: auto;
+	display: none;
+	text-align: center;
+	z-index: 999;
+}
+
+.listTwo_item {
+	float: left;
+	width: 150px;
+	margin: auto;
+	text-align: center;
+	line-height: 35px;
+	height: 100px;
+	cursor: pointer;
+}
+
+.listTwo_item:hover {
+	color: red;
+}
+
+.listTwo_item:hover .scicon {
+	color: red;
+}
+
+.nav_icon {
+	/*right: 200px;*/
+	top: 5px;
+	/*background-color: #007DDB;*/
+	height: 60px;
+	width: 180px;
+	margin-left: 30px;
+}
+/*单个字体图标*/
+.ni_o {
+	float: left;
+	height: 60px;
+	margin-left: 15px;
+}
+
+.ni_o:hover .icon {
+	color: red;
+}
+/*我的信息悬浮窗*/
+.me {
+	width: 320px;
+	height: 300px;
+	background-color: white;
+	position: absolute;
+	right: -150px;
+	display: none;
+	/*visibility: hidden;*/
+	line-height: 25px;
+	top: 61px;
+	box-shadow: 0px 1px 1px #aaaaaa;
+	z-index: 999;
+}
+
+#icon_me {
+	position: relative;
+}
+
+#icon_me:hover #me {
+	display: block;
+}
+
+.me_list {
+	height: 40px;
+	width: 280px;
+	color: #828282;
+	font-size: 14px;
+	line-height: 40px;
+	margin: 20px;
+	border-bottom: 1px solid gainsboro;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.me_list:hover {
+	color: black
+}
+
+.me_list_login {
+	height: 40px;
+	width: 280px;
+	color: #0099cc;
+	font-size: 14px;
+	line-height: 40px;
+	margin: 20px;
+	cursor: pointer;
+}
+
+.me_list_login:hover {
+	text-decoration: underline
+}

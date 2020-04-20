@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/MyOrder.css}" />
+<script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+<style type="text/css">
+.null_icon {
+	margin: auto;
+	width: 300px;
+	padding-top: 100px;
+}
+
+.order_title {
+	display: flex;
+}
+
+.dlist {
+	width: 100px;
+	margin-left: 610px;
+	margin-top: 10px;
+}
+/*=====下拉框======  */
+/*.content {
+			padding-top: 5%;
+		}
+		*/
+.content .select {
+	width: 150px;
+	height: 40px;
+	font-family: "Microsoft Yahei";
+	font-size: 16px;
+	background-color: #fff;
+	position: relative;
+	z-index: 800;
+}
+/*transform(缩放、旋转、平移)，显示的是最终效果，没有动画过程*/
+/*transition是对元素本身的属性(比如：width、height)设置动画效果*/
+.content .select:after {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-left: 1px #ccc solid;
+	border-bottom: 1px #ccc solid;
+	position: absolute;
+	top: 11px;
+	right: 12px;
+	transform: rotate(-45deg);
+	transition: transform .3 ease-out, top .3s ease-out;
+}
+
+.content .select p {
+	padding: 0 15px;
+	line-height: 40px;
+	cursor: pointer;
+}
+/*设置下拉框收起时的高度过渡动画*/
+.content .select ul {
+	list-style-type: none;
+	background-color: #fff;
+	width: 100%;
+	overflow-y: auto;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	max-height: 0;
+	transition: max-height .3s ease-out;
+	background-color: #D3D3D3;
+}
+
+.content .select ul li {
+	padding: 0 15px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.content .select ul li:hover {
+	background-color: #e0e0e0;
+}
+
+/*.content .select ul li.selected {
+			background-color: #39f;
+			color: #fff;
+		}*/
+/*下拉框展开时调用动画slide-down*/
+/*transform-origin设置缩放下拉框的基点位置*/
+.content .select.open ul {
+	max-height: 250px;
+	-webkit-animation: slide-down .5s ease-in;
+	transition: max-height .3s ease-in;
+	transform-origin: 50% 0;
+}
+/*设置展开时下拉箭头的旋转动画*/
+.content .select.open:after {
+	transform: rotate(-225deg);
+	top: 18px;
+	transition: all .3s ease-in-out;
+}
+/*为下拉框展开时添加名称为slide-down的关键帧动画*/
+.content::-webkit-scrollbar {
+	display: none;
+	/*隐藏滚动条*/
+}
+
+@
+-webkit-keyframes slide-down { 0% {
+	transform: scale(1, 0);
+}
+25%
+{
+transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+scale
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1
+,
+1
+.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+}
+50%
+{
+transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+scale
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1
+,
+0
+.85
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+}
+75%
+{
+transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+scale
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1
+,
+1
+.05
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+}
+100%
+{
+transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+scale
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1
+,
+1);
+}
+}
+</style>
+<script type="text/javascript" th:src="@{/css/7天退换/iconfont.js}">
+	
+</script>
+<script type="text/javascript" th:src="@{/css/空的/iconfont.js}">
+	
+</script>
+<body>
+<div th:replace="user/head :: html"></div>
+	<div class="order">
+		<div class="order_m">
+			<div class="order_main_left">
+				<div class="left_userinfo">
+					<div class="userImg">
+						<!-- <c:if test="${user.photo==null}">
+							<img
+								src="https://statics.oneplus.cn/ov/assets/images/referral/avatar-default.png" />
+						</c:if>
+
+						<c:if test="${user.photo!=null}">
+							<img src="${pageContext.request.contextPath}/${user.photo}" />
+						</c:if> -->
+					</div>
+					<div class="userName">as</div>
+				</div>
+
+				<div class="left-list-title">我的资产</div>
+				<div class="left-list leftActive">我的订单</div>
+				<div class="left-list">我的券</div>
+				<div class="left-list">邀请码</div>
+				<div class="left-list">奖品</div>
+				<div class="left-list">推荐返利</div>
+				<!------------------>
+				<div class="left-list-title">一加账户管理</div>
+				<div class="left-list" onclick="toMe()">个人信息</div>
+				<div class="left-list" onclick="toAddr()">收货地址</div>
+				<div class="left-list">产品认证</div>
+				<!------------------>
+				<div class="left-list-title">售后服务</div>
+				<div class="left-list">一加加多宝</div>
+				<div class="left-list">售后单</div>
+			</div>
+			<div class="order_main_right">
+				<div class="order_title">
+					我的订单
+					<div class="dlist">
+						<div class="content">
+							<div class="select">
+								<p id="p_s">所有订单</p>
+								<ul>
+									<li data-value="所有订单" class="selected">所有订单</li>
+									<li data-value="未付款订单">未付款订单</li>
+									<li data-value="等待发货">等待发货</li>
+									<li data-value="已发货订单">已发货订单</li>
+									<li data-value="已完成订单">已完成订单</li>
+									<li data-value="已取消订单">已取消订单</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="height: 10px;"></div>
+				<div class="orderItems">
+
+					<div class="orderItem">
+						<div class="orderItemTitle"></div>
+						<div class="orderItemMain">
+
+							<div class="" style="height: 600px;">
+								<div class="null_icon">
+									<div class="car_icon">
+										<svg class="ifont" aria-hidden="true">
+												<use xlink:href="#icon-gouwudaishikongde"></use>
+											</svg>
+									</div>
+								</div>
+								<span id=""
+									style="font-size: 20px; color: #828282; text-align: center; margin: auto; display: block;">
+									竟然是空的 </span>
+							</div>
+						</div>
+						<div style="height: 30px; width: 100%;"></div>
+					</div>
+					<div style="height: 10px; width: 100%;"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="user/foot :: html"></div>
+</body>

@@ -1,0 +1,442 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title></title>
+<!-- 底部样式 -->
+
+<!-- 底部样式 -->
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/lib/layer-v3.1.1/layer/layer.js}"></script>
+<script type="text/javascript" th:src="@{/lib/layer-v3.1.1/layer/layer.js}"></script>
+<script type="text/javascript" th:src="@{/css/正确/iconfont.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery.validate.js}"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}"/>
+<style type="text/css">
+/*标题*/
+/*``````````````````````````````````````````````````*/
+.iconl {
+	width: 20px;
+	height: 20px;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	margin-top: 4px;
+}
+
+.login {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.login_font {
+	font-family: MYingHei W5, SlateForOnePlusRegular, Microsoft Yahei,
+		sans-serif;
+	font-size: 20px;
+}
+
+.form_login {
+	margin-top: 20px;
+	position: relative;
+}
+
+#accountTip {
+	position: absolute;
+	font-size: 14px;
+	color: red;
+	top: 30px;
+	display: none;
+}
+
+#passwordTip {
+	position: absolute;
+	font-size: 14px;
+	color: red;
+	top: 80px;
+	display: none;
+}
+
+.huakuaiTip {
+	font-size: 14px;
+	color: red;
+	width: 310px;
+	height: 25px;
+	margin: auto;
+	display: none;
+}
+
+#login_account {
+	-web-kit-appearance: none;
+	-moz-appearance: none;
+	font-size: 14px;
+	/*设置输入框中字体的大小*/
+	height: 40px;
+	/*设置输入框的高度*/
+	border-radius: 5px;
+	/*设置输入框的圆角的大小*/
+	border: 1px solid #c8cccf;
+	/*设置输入框边框的粗细和颜色*/
+	color: #986655;
+	/*设置输入框中文字的颜色 */
+	outline: 0;
+	/*将输入框点击的时候出现的边框去掉*/
+	text-align: center;
+	/*设置输入框中文字的位置*/
+	/*display: block;*/
+	/*将输入框设置为块级元素*/
+	width: 310px;
+	margin-top: 20px;
+}
+
+#login_pass {
+	-web-kit-appearance: none;
+	-moz-appearance: none;
+	font-size: 14px;
+	/*设置输入框中字体的大小*/
+	height: 40px;
+	/*设置输入框的高度*/
+	border-radius: 5px;
+	/*设置输入框的圆角的大小*/
+	border: 1px solid #c8cccf;
+	/*设置输入框边框的粗细和颜色*/
+	color: #986655;
+	/*设置输入框中文字的颜色 */
+	outline: 0;
+	/*将输入框点击的时候出现的边框去掉*/
+	text-align: center;
+	/*设置输入框中文字的位置*/
+	/*display: block;*/
+	/*将输入框设置为块级元素*/
+	width: 310px;
+	margin-top: 10px;
+}
+
+#login_btn {
+	border-radius: 3px;
+	/*圆角*/
+	margin-top: 20px;
+	width: 310px;
+	height: 40px;
+	/*按钮控件的宽度*/
+	font-family: "Arial Black", Gadget, sans-serif;
+	/*字体*/
+	font-size: 14px;
+	/*字体大小*/
+	display: inline-block;
+	/*段落内生出内框*/
+	cursor: pointer;
+	/*鼠标的形状*/
+	color: white;
+	/*设置文本的颜色*/
+	background-color: #eb0028;
+	/*背景颜色*/
+	/*border-bottom-color: #eb0028;*/
+	border-right-width: 0px;
+	/*边框的粗细*/
+	border-bottom-width: 0px;
+	/*边框的粗细*/
+	border-left-width: 0px;
+	/*边框的粗细*/
+	border-top-width: 0px;
+	/*边框的粗细*/
+}
+
+.login_others {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.login_others ul {
+	margin-top: 20px;
+	height: 23px;
+	width: 310px;
+	margin: auto;
+	text-align: center;
+	margin: auto;
+}
+
+.login_others ul li {
+	float: left;
+	font-size: 14px;
+	margin: auto;
+	margin-left: 30px;
+}
+
+.login_others ul li a {
+	color: #0099cc;
+}
+
+.login_others ul li a:hover {
+	text-decoration: underline;
+	width: 310px;
+}
+
+.hrLine {
+	vertical-align: middle;
+	display: inline-block;
+	margin: auto;
+	width: 100px;
+}
+
+.fengexian {
+	font-size: 12px;
+	margin: auto;
+	text-align: center;
+	width: 310px;
+	display: block;
+}
+
+.login_i {
+	height: 2em;
+	padding-top: 20px;
+	margin: auto;
+	width: 310px;
+}
+
+.login_icon_item {
+	float: left;
+	width: 2em;
+	margin-left: 45px;
+	cursor: pointer;
+}
+
+.login_icon {
+	width: 2em;
+	height: 2em;
+}
+/*滑块*/
+.drag {
+	width: 310px;
+	height: 32px;
+	line-height: 32px;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.bg {
+	width: 40px;
+	height: 100%;
+	position: absolute;
+	background-color: white;
+}
+
+.text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	user-select: none;
+	font-size: 12px;
+	color: #9c9c9c;
+}
+
+.btn {
+	width: 42px;
+	height: 30px;
+	position: absolute;
+	border: 1px solid #ccc;
+	cursor: move;
+	font-family: "宋体";
+	text-align: center;
+	background-color: #fff;
+	user-select: none;
+	color: #666;
+}
+
+.htip {
+	background-color: white;
+}
+
+.select_btn {
+	font-size: 13px;
+	padding: 0px 30px;
+	margin-top: 5px;
+	width: 120px;
+	margin: auto;
+	padding-top: 10px;
+}
+
+.checkbox_style {
+	display: none;
+}
+
+label {
+	display: inline;
+}
+
+.checkbox_style+label {
+	background-color: #FFF;
+	border: 1px solid #e2e2e2;
+	padding: 7px;
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+
+.checkbox_style:checked+label {
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	color: #243441;
+}
+
+.checkbox_style:checked+label:after {
+	content: ' \2714';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 0 0 1px;
+	color: #758794;
+	text-align: center;
+	font-size: 12px;
+}
+
+.iconl {
+	width: 25px;
+	height: 25px;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	color: black;
+	margin-bottom: 0px;
+	margin-top: 15px;
+	margin-left: 10px;
+	cursor: pointer;
+	/*background-color: red;*/
+}
+
+.iconl:hover {
+	color: red;
+}
+
+.iconledt {
+	width: 20px;
+	height: 20px;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	color: black;
+	margin-bottom: 0px;
+	cursor: pointer;
+	font-weight: 100;
+	margin-top: 1px;
+}
+
+.iconledt:hover {
+	color: red;
+}
+
+	.icon2 {
+			width: 20px;
+			height: 20px;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+			margin-top: 4px;
+		}
+</style>
+
+
+<script type="text/javascript">
+	$(function() {
+		$("#form").validate({
+			rules:{
+				login_account:{
+					required:true,
+					remote:"/UserController/validUsername"
+				},
+				login_pass:{
+					required:true,
+					remote:{
+						url:"/UserController/validPassword",
+						type:"POST",
+						dataType:"json",
+						data:{
+							login_account:function(){
+								return $("#login_account").val();
+							},
+							login_pass:function(){
+								return $("#login_pass").val();
+							}
+						}
+					}
+				}
+			},
+			messages:{
+				login_account:{
+					remote:"用户不存在"
+				},
+				login_pass:{
+					remote:"密码错误"
+				}
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	<div class="login">
+		<!--登录标题-->
+		<span class="login_font">登录</span> <!--登录表单-->
+		<div class="form_login">
+			<form id="form" th:action="@{/UserController/Login}" >
+			<input type="text" name="login_account" id="login_account" placeholder="邮箱/账号/手机号" value="" />
+			<span id="accountTip"> 请输入账号 </span><br/> 
+			<input type="password" name="login_pass" id="login_pass" placeholder="请输入密码" value="" />
+			<span id="passwordTip"> 请输入密码 </span><br />
+
+
+			<input id="login_btn" type="submit" value="登录" />
+			</form>
+		</div>
+
+		<!--其他方式登录-->
+		<div class="login_others">
+			<ul>
+
+				<a style="width: 50%;color: #36aae8 " th:href="@{/UserController/toZhuCe}">注册</a>
+				<a style="width: 50% ;color: #36aae8" th:href="@{/goodspage/list}">暂不登录</a>
+
+			</ul>
+			<div style="height: 20px; width: 310px;"></div>
+			<!--分割线-->
+
+			<div class="fengexian">
+				<div style="width: 100%; text-align: left;">
+					<hr class="hrLine" />
+					选择其它方式登录
+					<hr class="hrLine" />
+				</div>
+			</div>
+			<script type="text/javascript" th:src="@{/css/登录图标/iconfont.js}">
+				
+			</script>
+
+		</div>
+		<!--微博 微信 QQ图标-->
+		<div class="login_i">
+			<div class="login_icon_item">
+				<svg class="login_icon">
+							<use xlink:href="#icon-weibo-denglu"></use>
+				</svg>
+			</div>
+			<div class="login_icon_item">
+				<svg class="login_icon">
+							<use xlink:href="#icon-weixindenglu"></use>
+						</svg>
+			</div>
+			<div class="login_icon_item">
+				<svg class="login_icon">
+					<use xlink:href="#icon-QQdenglu"></use>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div style="height: 100px; width: 310px;"></div>
+</body>
+
+
+</html>

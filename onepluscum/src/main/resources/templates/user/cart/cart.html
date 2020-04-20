@@ -1,0 +1,576 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<title></title>
+	<script th:src="@{http://libs.baidu.com/jquery/2.0.0/jquery.min.js}"></script>
+</head>
+<link rel="stylesheet" type="text/css"
+	  th:href="@{/css/common.css}" />
+</head>
+<style type="text/css">
+	.cart {
+		text-align: center;
+		box-shadow: 0px 1px 1px #aaaaaa;
+	}
+
+	.cart_main {
+		margin: auto;
+		width: 1200px;
+		/*background-color: #F9F9F9;*/
+		background-color: white;
+		position: relative;
+	}
+
+	.qitian_all {
+		margin: auto;
+		width: 1200px;
+		background-color: #F9F9F9;
+		height: 124.4px;
+		margin-top: 10px;
+		box-shadow: 0px 1px 1px #aaaaaa;
+	}
+
+	.qitian {
+		width: 2em;
+		height: 2em;
+		vertical-align: -0.15em;
+		fill: currentColor;
+		overflow: hidden;
+	}
+
+	.qitian_item {
+		width: 266.5px;
+		height: 86px;
+		float: left;
+		padding: 0px 15px;
+		font-size: 16px;
+		padding-top: 30px;
+		font-family: MYingHei W5, SlateForOnePlusRegular, Microsoft Yahei,
+		sans-serif;
+		font-weight: 400;
+	}
+
+	.cart_title {
+		font-size: 18px;
+		height: 60px;
+		text-align: left;
+		margin-top: 10px;
+		background-color: white;
+		line-height: 60px;
+		padding-left: 30px;
+		box-shadow: 0px 1px 1px #aaaaaa;
+	}
+
+	.hrLine {
+		vertical-align: middle;
+		display: inline-block;
+		margin: auto;
+		width: 95%;
+	}
+
+	.car_item {
+		margin: auto;
+		display: flex;
+		line-height: 90px;
+		/*padding-left: 30px;*/
+		height: 120px;
+		width: 1140px;
+		border-bottom: 1px solid gainsboro;
+		margin-top: 10px;
+	}
+
+	.car_item_img {
+		width: 220px;
+		height: 84px;
+		/*background-color: aquamarine;*/
+	}
+
+	.car_item_name {
+		width: 330px;
+		/*background-color: royalblue;*/
+		cursor: pointer;
+	}
+
+	.car_item_price {
+		width: 170px;
+		/*background-color: #009F95;*/
+	}
+
+	.car_item_priceCount {
+		width: 170px;
+		/*background-color: #009F95;*/
+	}
+
+	.car_item_count {
+		margin-top: 14px;
+		width: 170px;
+		/*background-color: #01AAED;*/
+		height: 28px;
+	}
+
+	.car_item_del {
+		margin-top: 5px;
+		width: 40px;
+		/*background-color: #2D93CA;*/
+		cursor: pointer;
+	}
+
+	.car_item img {
+		margin-top: 10px;
+		width: 84px;
+		height: 84px;
+		cursor: pointer;
+	}
+
+	.total {
+		width: 100%;
+		height: 200px;
+		/*background-color: aquamarine;*/
+		margin-top: 40px;
+		display: flex;
+		color: #828282;
+		font-weight: 540;
+	}
+
+	.total_count {
+		width: 670px;
+		height: 23px;
+		font-size: 14px;
+		text-align: left;
+		margin-left: 50px;
+	}
+
+	.total_right {
+		width: 410px;
+		height: 198px;
+		/*background-color: royalblue;*/
+		text-align: left;
+	}
+
+	.zongjia {
+		height: 50px;
+		line-height: 50px;
+		position: relative;
+	}
+
+	.total_Price {
+		position: absolute;
+		right: 10px;
+		top: 0px;
+		font-size: 24px;
+		color: black;
+	}
+
+	.bt {
+		width: 200px;
+		height: 60px;
+		text-align: center;
+		position: absolute;
+		top: 24%;
+		left: auto;
+		z-index: 30;
+	}
+
+	.bt1 {
+		width: 200px;
+		height: 50px;
+		border: 1px solid black;
+		background-color: white;
+		border-radius: 5px;
+		font-size: 20px;
+		vertical-align: auto;
+		position: relative;
+		overflow: hidden;
+		float: left;
+		margin-left: 30px;
+		cursor: pointer;
+	}
+
+	.bt2 {
+		width: 200px;
+		height: 50px;
+		border: 1px solid rgba(235, 0, 40, 1);
+		border-radius: 5px;
+		background-color: rgba(235, 0, 40, 1);
+		font-size: 20px;
+		text-align: center;
+		vertical-align: middle;
+		position: relative;
+		overflow: hidden;
+		z-index: 2;
+		float: left;
+		margin-left: 30px;
+		cursor: pointer;
+	}
+
+	.shop {
+		width: 200px;
+		height: 60px;
+		position: absolute;
+		left: -200px;
+		top: 0;
+		background: black;
+	}
+
+	.js {
+		width: 200px;
+		height: 60px;
+		position: absolute;
+		left: -200px;
+		top: 0;
+		background-color: gainsboro;
+	}
+
+	.bt1:hover .shop {
+		transform: translateX(200px);
+		transition-duration: 0.6s;
+	}
+
+	.bt1:hover .bt {
+		color: white;
+		transition-duration: 0.6s;
+	}
+
+	.bt2:hover .js {
+		transform: translateX(200px);
+		transition-duration: 1s;
+		background: rgba(0, 0, 0, 0.1);
+	}
+
+	.total_btn {
+		/* margin-top: 100px; */
+		position: absolute;
+		right: 10px;
+		bottom: 20px;
+	}
+	/*购物车*/
+	.btn-numbox {
+		margin-top: 20px;
+		margin-left: 30px;
+		/*background-color: aquamarine;*/
+		width: 100px;
+		height: 28px;
+	}
+
+	.btn-numbox li {
+		float: left;
+	}
+
+	.btn-numbox li .number {
+		display: inline-block;
+		font-size: 12px;
+		color: #808080;
+		vertical-align: sub;
+	}
+
+	.btn-numbox .count {
+		overflow: hidden;
+		/*margin: 0 16px 0 -20px;*/
+	}
+
+	.btn-numbox .count .num-jian, .input-num, .num-jia {
+		vertical-align: top;
+		display: inline-block;
+		width: 28px;
+		height: 28px;
+		line-height: 28px;
+		text-align: center;
+		font-size: 18px;
+		color: #999;
+		cursor: pointer;
+		border: 1px solid #e6e6e6;
+	}
+	/*输入框内容*/
+	.input-num {
+		width: 32px;
+		height: 28px;
+		color: darkgray;
+		border-left: 0;
+		border-right: 0;
+		font-size: 14px;
+	}
+
+	.del_icon {
+		width: 1.5em;
+		height: 1.5em;
+		vertical-align: -0.15em;
+		fill: currentColor;
+		overflow: hidden;
+	}
+</style>
+<script type="text/javascript"
+		th:src="@{/css/7天退换/iconfont.js}">
+</script>
+<link rel="stylesheet" type="text/css"
+	  th:href="@{/css/common.css}" />
+<body>
+<div th:replace="user/head :: html"></div>
+
+
+<div class="cart" th:if="${cart.cartItems!=null&&cart!=null}">
+	<!--七天退货-->
+	<div class="qitian_all">
+		<div class="qitian_item">
+			<svg class="qitian" aria-hidden="true">
+				<use xlink:href="#icon-tianbaohuan"></use>
+			</svg>
+			<p>&nbsp;</p>
+			<p>7天无理由退货</p>
+		</div>
+		<div class="qitian_item">
+			<svg class="qitian" aria-hidden="true">
+				<use xlink:href="#icon-15tianbaohuan"></use>
+			</svg>
+			<p>&nbsp;</p>
+			<p>15天退货保障</p>
+		</div>
+		<div class="qitian_item">
+			<svg class="qitian" aria-hidden="true">
+				<use xlink:href="#icon-30tiantuihuo"></use>
+			</svg>
+			<p>&nbsp;</p>
+			<p>30天换货保障</p>
+		</div>
+		<div class="qitian_item">
+			<svg class="qitian" aria-hidden="true">
+				<use xlink:href="#icon-baoyou"></use>
+			</svg>
+			<p>&nbsp;</p>
+			<p>99元全场包邮</p>
+		</div>
+	</div>
+	<!--//加减-->
+
+	<script type="text/javascript">
+		function jian(id){
+			var num=document.getElementById("input-num"+id).value;
+			if(parseInt(num) > 1) {
+				num = parseInt(num) - 1;
+				document.getElementById("input-num"+id).value=num;
+			}else{
+				num = parseInt(num);
+			}
+			var DJ=parseInt(document.getElementById("DJ"+id).innerHTML);
+			$.post(
+					"/cartController/update?id="+id+"&time="+new Date().getTime(),
+					{
+						count:num,
+						mm:"jian"
+					},
+					function (data) {
+						document.getElementById("item_total"+id).innerHTML=num*DJ;
+						document.getElementById("total").innerHTML=data;
+					},
+					"json"
+			);
+			changeAllCount();
+		};
+		function jia(id){
+			var num=document.getElementById("input-num"+id).value;
+			if(parseInt(num) < 10) {
+				num = parseInt(num) + 1;
+				document.getElementById("input-num"+id).value=num;
+				var DJ=parseInt(document.getElementById("DJ"+id).innerHTML);
+				$.post(
+						"/cartController/update?id="+id+"&time="+new Date().getTime(),
+						{
+							count:num,
+							mm:"jia"
+						},
+						function (data) {
+							document.getElementById("item_total"+id).innerHTML=num*DJ;
+							document.getElementById("total").innerHTML=data
+						},
+						"json"
+				);
+				changeAllCount()
+				return;
+			}else{
+				num = parseInt(num);
+				layer.msg('商品限购十件', function(){
+
+				});
+				return;
+			}
+			/* 	var num=document.getElementById("input-num"+id).value;
+                var n = parseInt(num) + 1;
+                document.getElementById("input-num"+id).value=n; */
+
+		}
+
+	</script>
+
+	<!--//计算单个商品总价-->
+	<script type="text/javascript">
+		/* $(function() {
+            itemTotal()
+        })
+        itemTotal = function() {
+            //获取单价集合
+            var a = $(".item_price");
+            //获取数量集合
+            var c = $(".input-num");
+            //获取总价集合
+            var d = $(".item_total");
+
+            for(var i = 0; i < a.length; i++) {
+                var count = c[i].value
+                var price = a[i].innerHTML;
+                //						console.log(price + "````" + count)
+                itemt = parseInt(count) * parseInt(price);
+                //						console.log(itemt)
+                console.log(d[i])
+                $(".item_total:eq(" + i + ")").text(itemt)
+            }
+        } */
+	</script>
+	<!--//计算总价钱-->
+	<script type="text/javascript">
+		/* $(function() {
+            atotal()
+        })
+        atotal = function() {
+            var a = $(".cart_main").find(".item_total");
+            var total = 0
+            for(var i = 0; i < a.length; i++) {
+                total += parseInt(a[i].innerHTML);
+            }
+            //					console.log(total);
+            $("#total").text(total)
+        };*/
+
+		/* function addOrders() {
+            location.href="${pageContext.request.contextPath}/user/order/submitOrder.jsp"
+        } */
+		function addOrders() {
+			location.href="/order/toSubmitOrder"
+		}
+	</script>
+	<!--//计算总件数的方法-->
+	<script type="text/javascript">
+		$(function() {
+			changeAllCount()
+		})
+		var changeAllCount = function() {
+			var a = $(".cart_main").find(".input-num");
+			var count = 0;
+			for(var i = 0; i < a.length; i++) {
+				var c = parseInt(a[i].value);
+				count = count + c;
+			}
+			//					console.log(count)
+			$("#total_c").text(count)
+		};
+		function jixu() {
+			location.href="/cartController/toMain";
+		}
+		function jiesuan() {
+			location.href="orderServlet?m=add";
+		}
+	</script>
+
+	<script type="text/javascript"
+			th:src="@{/css/删除/iconfont.js}">
+	</script>
+
+	<div class="cart_main">
+		<div class="cart_title">购物车</div>
+
+
+		<div class="car_item" th:each="item:${cart.cartItems}">
+			<div class="car_item_img">
+				<img
+						th:src="|/${item.product.photopath}|" />
+			</div>
+			<div class="car_item_name" th:text="${item.product.pname}"></div>
+			<div class="car_item_price">
+				<span th:id="|DJ${item.product.id}|" th:text="${item.product.price}"></span>
+
+			</div>
+			<div class="car_item_count">
+				<ul class="btn-numbox">
+					<li>
+						<ul class="count">
+							<li><span th:id="|num-jian${item.product.id}|"
+									  class="num-jian" th:onclick="|jian(${item.product.id})|">-</span></li>
+							<li><input type="text" class="input-num"
+									   th:id="|input-num${item.product.id}|" th:value="${item.count}" disabled="dtru" /></li>
+							<li><span th:id="|num-jia${item.product.id}|" class="num-jia"
+									  th:onclick="|jia(${item.product.id})|">+</span></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="car_item_priceCount ">
+				¥<span th:id="|item_total${item.product.id}|" th:text="${item.subTotal}"></span>
+			</div>
+			<!-- 删除单项 -->
+			<div class="car_item_del"
+				 th:onclick="|cart_toDele(${item.product.id})|">
+				<svg class="del_icon " aria-hidden="true ">
+					<use xlink:href="#icon-shanchu"></use>
+				</svg>
+			</div>
+		</div>
+
+		<div class="total ">
+			<div class="total_count ">
+				已选择<span id="total_c"></span> 件商品
+			</div>
+			<div class="total_right ">
+				<div class="zongjia ">
+					<p>总价</p>
+					<p class="total_Price ">
+						￥<span id="total" th:text="${cart.total}"></span>
+					</p>
+				</div>
+				<p>支持免邮</p>
+				<div class="total_btn ">
+					<a
+							style="float: left; font-size: 20px; text-decoration: none; margin-top: 10px; cursor: pointer"
+							onclick="cart_toClear()">清空购物车</a>
+					<div class="bt1" onclick="shop()">
+						<div class="bt" onclick="toShop()">继续购物</div>
+						<div class="b shop"></div>
+					</div>
+					<div class="bt2" onclick="addOrders()">
+						<div class="bt" style="color: white;">去结算</div>
+						<div class="b js"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="width: 100%; height: 80px; margin-top: 30px;"></div>
+</div>
+
+
+
+
+</body>
+<script type="text/javascript">
+	cart_toClear=()=>{
+		location.href="/cartController/deleteAll";
+	}
+	cart_toDele=(id)=>{
+
+		$.ajax({
+			url:"/cartController/delete",
+			type : "GET",
+			data : {
+
+				id : id
+			},
+			dataType : "json",
+			success : function(data) {
+				location.href="/cartController/toHtml"
+			}
+		});
+	}
+	function toShop(){
+		location.href="/goodspage/list"
+	}
+</script>
+</html>

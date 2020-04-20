@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title></title>
+<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/order/head.js}"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+<script type="text/javascript" th:src="@{/js/order/common.js}"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/head.css}" />
+<script type="text/javascript" th:src="@{/css/字体图标/iconfont.js}"></script>
+<script type="text/javascript" th:src="@{/js/layer-v3.1.1/layer/layer.js}"></script>
+<script type="text/javascript" th:src="@{/js/iconfontleftdel.js}"></script>
+	<script type="text/javascript">
+		function sousuo() {
+			$(".ssk").toggle(500)
+		}
+
+		function toback() {
+			$(".ssk").hide(500)
+		}
+		function toIndex() {
+			location.href="/goodspage/toIndex";
+		}
+		function toCart() {
+			location.href="/cartController/toHtml";
+		}
+		function toMyOrder() {
+			location.href="/order/list";
+		}
+		function zhuxiao() {
+			location.href="/UserController/zhuxiao";
+		}
+
+	</script>
+	<style type="text/css">
+		.navhead {
+			height: 60px;
+			background-color: white;
+			box-shadow: 0px 1px 3px #aaaaaa;
+			display: flex;
+			/*overflow: hidden;*/
+			width: 100%;
+			z-index: 999;
+		}
+
+		.ssk {
+			width: 250px;
+			height: 60px;
+			position: absolute;
+			top: 0;
+			left: -200px;
+			display: none;
+		}
+
+		.ni_o {
+			position: relative;
+		}
+
+		.bar7 input {
+			width: 250px;
+			border-radius: 42px;
+			border: 1px solid #828282;
+			transition: .3s linear;
+			float: right;
+			height: 40px;
+			padding-left: 45px;
+			font-size: 16px;
+			margin-top: 8px;
+		}
+
+		.bar7 input:focus {
+			width: 250px;
+			outline: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+
+		.show {
+			display: block;
+		}
+
+		.sousuoTO {
+			position: absolute;
+			left: -30px;
+			top: 18px
+		}
+
+		.sousuoBack {
+			position: absolute;
+			right: 10px;
+			top: 5px;
+		}
+
+		.sousuoTO:hover {
+			color: #FF0000;
+			cursor: pointer;
+		}
+
+		.iconl {
+			width: 25px;
+			height: 25px;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+			color: black;
+			margin-bottom: 0px;
+			margin-top: 15px;
+			margin-left: 10px;
+			cursor: pointer;
+			/*background-color: red;*/
+		}
+
+		.iconl:hover {
+			color: red;
+		}
+
+		.iconledt {
+			width: 20px;
+			height: 20px;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+			color: black;
+			margin-bottom: 0px;
+			cursor: pointer;
+			font-weight: 100;
+			margin-top: 1px;
+		}
+
+		.iconledt:hover {
+			color: red;
+		}
+	</style>
+</head>
+
+
+<body>
+	<!--头部导航栏-->
+	<div class="navhead">
+		<div style="width: 1200px; height: 60px; margin: auto; display: flex;">
+			<!--一加图标-->
+			<div class="" style="height: 40px; width: 40px; margin-left: 20px;"
+				onclick="toIndex()">
+				<svg class="icon_yijia" aria-hidden="true">
+						<use xlink:href="#icon-yijia"></use>
+					</svg>
+			</div>
+			<!--导航栏中间内容-->
+			<ul class="head_ul">
+				<li class="head_ul_li"><a href="">OnePlus 7 Pro</a>
+					<div class="dh"></div></li>
+				<li class="head_ul_li"><a
+					th:href="@{/goodspage/goodsPage&pid=1}">OnePlus
+						7</a>
+					<div class="dh "></div></li>
+
+				<li class="head_ul_li"><a
+					th:href="@{/goodspage/list}">商城</a>
+					<!-- 二级菜单 -->
+					<div class="listTwo">
+						<div style="width: 1000px; margin-left: 330px;">
+							<div class="listTwo_item">
+								<a
+									th:href="@{/goodspage/list2?cid=1}">
+									<svg class="scicon" aria-hidden="true">
+										<use xlink:href="#icon-shouji"></use>
+									</svg> <br />&nbsp;手机
+								</a>
+							</div>
+							<div class="listTwo_item">
+								<a
+										th:href="@{/goodspage/list2?cid=2}">
+									<svg class="scicon" aria-hidden="true">
+										<use xlink:href="#icon-erji"></use>
+									</svg> <br />&nbsp;耳机
+								</a>
+							</div>
+							<div class="listTwo_item">
+								<a
+										th:href="@{/goodspage/list2?cid=3}">
+									<svg class="scicon" aria-hidden="true">
+										<use xlink:href="#icon-shoujike"></use>
+									</svg> <br />&nbsp;壳/膜
+								</a>
+							</div>
+							<div class="listTwo_item">
+								<a
+										th:href="@{/goodspage/list2?cid=4}">
+									<svg class="scicon" aria-hidden="true">
+										<use xlink:href="#icon-shujuxian"></use>
+									</svg> <br />&nbsp;适配器/数据线
+								</a>
+							</div>
+							<div class="listTwo_item">
+								<a
+										th:href="@{/goodspage/list2?cid=5}">
+									<svg class="scicon" aria-hidden="true">
+										<use xlink:href="#icon-taozhuanglihe"></use>
+									</svg> <br />&nbsp;套装
+								</a>
+							</div>
+							<div class="listTwo_item">
+								<a
+										th:href="@{/goodspage/list2?cid=6}">
+									<svg class="scicon" aria-hidden="true">
+										<use xlink:href="#icon-beibao-xianxing"></use>
+									</svg> <br />&nbsp;生活馆
+								</a>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="dh"></div></li>
+
+				<li class="head_ul_li"><a
+						th:href="@{/goodspage/toPinpai}">
+					品牌</a>
+					<div class="dh"></div></li>
+				<li class="head_ul_li"><a href="">服务</a>
+					<div class="dh"></div></li>
+				<li class="head_ul_li"><a href="">论坛</a>
+					<div class="dh"></div></li>
+				<li class="head_ul_li"><a href="">零售店</a>
+					<div class="dh"></div></li>
+			</ul>
+			<!--字体图标-->
+			<div class="nav_icon">
+				<!--我的信息悬浮-->
+
+				<!--个人中心-->
+				<div id="icon_me" class="ni_o">
+					<svg class="iconl">
+							<use xlink:href="#icon-user"></use>
+							<div id="me" class="me">
+								<ul>
+									<li class="me_list" onclick="toMyOrder()">
+										订单
+									</li>
+									<li class="me_list" onclick="toMe()">
+										账户
+									</li>
+									<li class="me_list">
+										推荐有礼
+									</li>
+											<li  class="me_list_login"
+									th:onclick="zhuxiao()">注销</li>
+
+								</ul>
+							</div>
+						</svg>
+				</div>
+				<!--购物车-->
+				<div class="ni_o" onclick="toCart()">
+					<svg class="iconl" aria-hidden="true">
+							<use xlink:href="#icon-gouwuche"></use>
+						</svg>
+				</div>
+				<!--搜索-->
+				<div class="ni_o">
+					<svg aria-hidden="true" class="iconl" onclick="sousuo()">
+							<use xlink:href="#icon-xiazai17"></use>
+						</svg>
+					<div class="ssk">
+						<div class="search bar7">
+							<input type="text" placeholder="请输入您要搜索的商品..." id="sskinp">
+						</div>
+						<div class="sousuoTO" onclick="toback()">
+							<svg class="iconledt" aria-hidden="true">
+									<use xlink:href="#icon-zuo2"></use>
+								</svg>
+						</div>
+						<div class="sousuoBack" onclick="query()">
+							<svg aria-hidden="true" class="iconl"
+								style="width: 20px; height: 20px;">
+									<use xlink:href="#icon-xiazai17"></use>
+								</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

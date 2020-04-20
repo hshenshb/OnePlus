@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>修改管理员信息</title>
+    <base href="${pageContext.request.contextPath}/">
+    <script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.validate.js}"></script>
+    <script type="text/javascript" th:src="@{/js/iconfontadminadd.js}" ></script>
+
+    <script type="text/javascript">
+        jQuery.validator.addMethod("isMobile", function(value, element) {
+
+            var mobile = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            return this.optional(element) || (mobile.test(value));
+        }, "请正确填写您的邮箱");
+
+
+        $(function() {
+            $("#form").validate({
+                rules:{
+                    username:{
+                        required:true,
+                        remote:{
+                            url:"/adminController/validUsernameUpdate",
+                            type:"POST",
+                            dataType:"json",
+                            data:{
+                                id:function(){
+                                    return $("#id").val();
+                                },
+                                username:function(){
+                                    return $("#username").val();
+                                },
+
+                            }
+                        }
+
+                    },
+                    password:{
+                        required:true,
+                    },
+                    email:{
+                        required:true,
+                        isMobile:true,
+                    }
+
+                },
+                messages:{
+                    username:{
+                        remote:"用户已存在"
+                    },
+
+                    email:{
+                        remote:"请正确填写您的邮箱"
+                    }
+                }
+            })
+        });
+        function fanhui() {
+            location.href="/adminController/list";
+        }
+    </script>
+    <style type="text/css">
+        .iconadminadd {
+            width: 4em;
+            height: 4em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .admin-add-ys{
+            border: 1px solid beige;
+            width: 800px;
+            margin:auto;
+            background-color: gainsboro;
+        }
+        .admin-add-fh{
+            background-color: orange;
+            color: white;
+            font-family: "微软雅黑";
+            font-weight: bold;
+            width: 105px;
+            height: 40px;
+            margin:auto;
+            border: 2px solid gainsboro;
+        }
+        .admin-add-tj:hover,
+        .admin-add-fh:hover{
+            color: gainsboro;
+            cursor: pointer;
+            background: orangered;
+        }
+        .addmin-add-radio{
+            cursor: pointer;
+        }
+        .smlzzzz{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div  class="admin-add-ys">
+    <form id="form" action="/adminController/update" method="post">
+        <div class="smlzzzz" >
+            <p>
+                <svg class="iconadminadd" aria-hidden="true">
+                    <use xlink:href="#icon-yijia"></use>
+                </svg>
+            </p>
+            <h1>管理员信息修改</h1><br>
+        </div>
+        <div style="margin-left: 40%;">
+            <p><input type="hidden" id="id" name="id" th:value="${us.id }"/></p>
+            <p>管理员姓名：<input type="text" id="username" name="username" th:value="${us.username }"/></p>
+            <p>管理员密码：<input type="text" id="password" name="password" th:value="${us.password }"/></p>
+            <p>管理员邮箱：<input type="text" id="email" name="email" th:value="${us.email }"/></p>
+        </div>
+        <div class="smlzzzz">
+            <p>管理员权限：
+                <input class="addmin-add-radio" type="radio" name="power" value="1" th:checked="${us.power==1}" />普通管理员
+                <input class="addmin-add-radio" type="radio" name="power" value="0" th:checked="${us.power==0}" />超级管理员
+            </p>
+            <p><input class="admin-add-fh"  type="submit" value="修改"/>
+                <button class="admin-add-fh"  onclick="fanhui()">返回</button>
+            </p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

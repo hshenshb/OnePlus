@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org"><head>
+<head>
+<meta charset="UTF-8"/>
+ 
+		<title></title>
+		<script th:src="@{http://libs.baidu.com/jquery/2.0.0/jquery.min.js}"></script>
+	</head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+	<style type="text/css">
+		.cart {
+			text-align: center;
+		}
+		
+		.cart_main {
+			margin: auto;
+			width: 1200px;
+			background-color: white;
+			box-shadow: 0px 1px 1px #aaaaaa;
+			margin-top: 10px;
+			height:450px
+		}
+		
+		.qitian_all {
+			margin: auto;
+			width: 1200px;
+			background-color: #F9F9F9;
+			height: 124.4px;
+			margin-top: 10px;
+			box-shadow: 0px 1px 1px #aaaaaa;
+		}
+		
+		.qitian {
+			width: 2em;
+			height: 2em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+		
+		.qitian_item {
+			width: 266.5px;
+			height: 86px;
+			float: left;
+			padding: 0px 15px;
+			font-size: 16px;
+			padding-top: 30px;
+			font-weight: 400;
+		}
+		
+		.car_item {
+			margin: auto;
+			/*padding-left: 30px;*/
+			height: 400px;
+			width: 1140px;
+		}
+		
+		.ibtn {
+			height: 54px;
+			width: 200px;
+			margin: auto;
+			margin-top: 30px;
+		}
+		
+		.button_jiesuan {
+			border-radius: 8px;
+			background-color: #EB0028;
+			/* Green */
+			/*border: none;*/
+			color: white;
+			/*padding: 10px 32px;*/
+			height: 54px;
+			width: 200px;
+			text-align: center;
+			/*text-decoration: none;*/
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+			border: 0px solid #555555;
+		}
+		
+		.button_jiesuan:hover {
+			background-color: #b8001f;
+			color: white;
+		}
+		
+		.car_icon {
+			height: 120px;
+			width: 120px;
+			font-size: 40px;
+			color: gray;
+			margin: auto;
+			padding-top: 60px;
+		}
+		
+		.ifont {
+			width: 2em;
+			height: 2em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+		.car_font {
+			font-size: 16px;
+			color: #828282;
+			margin-top: 20px;
+			height: 24px;
+		}
+	</style>
+	<script type="text/javascript" th:src="@{/css/7天退换/iconfont.js}">
+	</script>
+<script type="text/javascript" th:src="@{/css/空的/iconfont.js}">
+	</script>
+<body>
+<div th:replace="user/head :: html"></div>
+<div class="cart">
+			<!--七天退货-->
+			<div class="qitian_all">
+				<div class="qitian_item">
+					<svg class="qitian" aria-hidden="true">
+						<use xlink:href="#icon-tianbaohuan"></use>
+					</svg>
+					<p>&nbsp;</p>
+					<p>7天无理由退货</p>
+				</div>
+				<div class="qitian_item">
+					<svg class="qitian" aria-hidden="true">
+						<use xlink:href="#icon-15tianbaohuan"></use>
+					</svg>
+					<p>&nbsp;</p>
+					<p>15天退货保障</p>
+				</div>
+				<div class="qitian_item">
+					<svg class="qitian" aria-hidden="true">
+						<use xlink:href="#icon-30tiantuihuo"></use>
+					</svg>
+					<p>&nbsp;</p>
+					<p>30天换货保障</p>
+				</div>
+				<div class="qitian_item">
+					<svg class="qitian" aria-hidden="true">
+						<use xlink:href="#icon-baoyou"></use>
+					</svg>
+					<p>&nbsp;</p>
+					<p>99元全场包邮</p>
+				</div>
+			</div>
+
+			<div class="cart_main">
+				<div class="car_item">
+					<div class="car_icon">
+						<svg class="ifont" aria-hidden="true">
+							<use xlink:href="#icon-gouwudaishikongde"></use>
+						</svg>
+					</div>
+					<div class="car_font">
+						你的购物车还没有商品
+					</div>
+					<div class="ibtn">
+						<button class="button_jiesuan " onclick="toShop()">去购物</button>
+					</div>
+				</div>
+			</div>
+			<div style="width: 100%;height: 80px;margin-top: 30px;">
+
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		
+			
+			function toShop(){ 
+		location.href="/goodspage/list"
+	}
+	</script>
+	<script type="text/javascript" th:src="@{/css/cart/iconfont.js}">
+	</script>
+
+</html>

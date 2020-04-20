@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>订单管理列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" th:href="@{/css/font.css}">
+    <link rel="stylesheet" th:href="@{/css/xadmin.css}">
+    <script type="text/javascript" th:src="@{/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/js/xadmin.js}"></script>
+    <script type="text/javascript" th:src="@{js/jquery-1.8.2.min.js}"></script>
+    <script type="text/javascript">
+
+
+
+        function fenye(page) {
+            var id=document.getElementById("id").value;
+            location.href="/AdminOrderController/list?page="+page+"&id="+id;
+        }
+        function query() {
+            var id=document.getElementById("id").value;
+            location.href="/AdminOrderController/list?id="+id;
+        }
+        function xiangqing(id) {
+
+            var btn=document.getElementById("btn"+id);
+            var div1=document.getElementById("div"+id);
+           // alert(btn.value);
+            if(btn.value=="订单详情"){
+                $.ajax({
+                    type: "POST",
+                    cache: false,
+                    data: "id="+id+"&time="+new Date().getTime(),
+                    async: false,
+                    url: "/AdminOrderItemController/getOrderitemById",
+                    success: function(userinfo) {
+                        div1.innerHTML=userinfo;
+                        btn.value = "关闭";
+                    }
+                });
+            }else{
+                div1.innerHTML="";
+                btn.value = "订单详情";
+            }
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            请输入查询id关键字：
+            <input type="text" name="id" id="id" th:value="${id}"/>
+            <button onclick="query()">查询</button>
+
+            <div class="layui-card">
+
+
+                <div class="layui-card-body ">
+                    <div></div>
+                    <table class="layui-table layui-form">
+                        <thead>
+                        <tr>
+
+                            <th>id</th>
+                            <th>用户名</th>
+                            <th>联系方式</th>
+                            <th>地址</th>
+                            <th>总金额</th>
+                            <th>下单日期</th>
+                            <th>订单状态</th>
+                            <th></th>
+
+                        </thead>
+                        <tbody>
+
+
+                            <tr th:each="te:${list}">
+                                <td th:text="${te.id}"></td>
+                                <td th:text="${te.oname}"></td>
+                                <td th:text="${te.phone}"></td>
+                                <td th:text="${te.addr}"></td>
+                                <td th:text="${te.total}"></td>
+                                <td th:text="${te.ordertime}"></td>
+                                <td>
+
+                                        <span th:if="${te.state==1}" th:text="未付款"></span>
+
+
+
+                                        <a th:if="${te.state==2}" th:href="@{|/AdminOrderController/send?id=${te.id}|}" th:text="发货"></a>
+
+                                    <span th:if="${te.state==3}" th:text="待收货"></span>
+                                    <span th:if="${te.state==4}" th:text="已完成"></span>
+                                    <span th:if="${te.state==5}" th:text="订单已取消"></span>
+                                    <span th:if="${te.state==6}" th:text="订单已失效"></span>
+
+
+
+                                </td>
+                                <td >
+                                    <div th:id="|div${te.id}|">
+
+                                    </div>
+                                    <input  type="button" value="订单详情" th:id="|btn${te.id}|" th:onclick="xiangqing([[${te.id}]])"/>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layui-card-body ">
+                    <div class="page">
+                        <div>
+
+                            <tr>
+                                <td colspan="3">
+                                    <font th:text="${pageInfo.pageNum}"></font>
+
+                                    /
+                                    <font th:text="${pageInfo.pages}"></font>
+
+                                    <button th:onclick="fenye(1)">首页</button>
+                                    <button th:onclick="|fenye(${pageInfo.prePage==0?1:pageInfo.prePage})|">上一页</button>
+                                    <button th:onclick="|fenye(${pageInfo.nextPage==0?pageInfo.pages:pageInfo.nextPage})|">下一页</button>
+                                    <button th:onclick="|fenye(${pageInfo.pages})|">尾页</button>
+                                </td>
+                            </tr>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

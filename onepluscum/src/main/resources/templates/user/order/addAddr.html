@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8"/>
+<title></title>
+</head>
+<script th:src="@{http://libs.baidu.com/jquery/2.0.0/jquery.min.js}"></script>
+<script
+	th:src="@{/js/layer-v3.1.1/layer/layer.js}"></script>
+<script type="text/javascript"
+	th:src="@{/css/dist/distpicker.js}">
+	
+</script>
+<style type="text/css">
+	#mdistrict,
+		#mcity,
+		#mprovince {
+			height: 40px;
+			border-radius: 3px;
+			/* Green */
+			/*border: none;*/
+			/*padding: 10px 32px;*/
+			height: 40px;
+			width: 97px;
+			text-align: center;
+			display: inline-block;
+			font-size: 14px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			transition-duration: 0.4s;
+			cursor: pointer;
+			border: 1px solid #c8cccf;
+		}
+		
+		.button_jixu {
+			border-radius: 3px;
+			/* Green */
+			/*border: none;*/
+			/*padding: 10px 32px;*/
+			height: 40px;
+			width: 128px;
+			text-align: center;
+			display: inline-block;
+			font-size: 14px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			transition-duration: 0.4s;
+			cursor: pointer;
+			background-color: gray;
+			color: white;
+			border: 1px solid #555555;
+		}
+		
+		.button_jixu:hover {
+			background-color: #555555;
+			color: white;
+		}
+		
+		.button_jiesuan {
+			border-radius: 3px;
+			background-color: #EB0028;
+			/* Green */
+			/*border: none;*/
+			color: white;
+			/*padding: 10px 32px;*/
+			height: 40px;
+			width: 128px;
+			text-align: center;
+			/*text-decoration: none;*/
+			display: inline-block;
+			font-size: 14px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+			border: 0px solid #555555;
+		}
+		
+		.button_jiesuan:hover {
+			background-color: #b8001f;
+			color: white;
+		}
+		
+		#accountTip {
+			position: absolute;
+			font-size: 14px;
+			top: 30px;
+			display: none;
+		}
+		
+		#login_name,
+		.login_account {
+			-web-kit-appearance: none;
+			-moz-appearance: none;
+			font-size: 14px;
+			/*设置输入框中字体的大小*/
+			height: 35px;
+			/*设置输入框的高度*/
+			border-radius: 5px;
+			/*设置输入框的圆角的大小*/
+			border: 1px solid #c8cccf;
+			/*设置输入框边框的粗细和颜色*/
+			/*设置输入框中文字的颜色 */
+			outline: 0;
+			/*将输入框点击的时候出现的边框去掉*/
+			/*设置输入框中文字的位置*/
+			/*display: block;*/
+			/*将输入框设置为块级元素*/
+			width: 310px;
+			margin-top: 10px;
+		}
+		
+		.updateTitle {
+			font-size: 24px;
+			height: 60px;
+			text-align: center;
+		}
+		
+		.updateName {
+			font-size: 16px;
+		}
+		
+		.btn {
+			margin-left: -5px;
+			margin-top: 20px;
+			width: 450px;
+			display: flex;
+		}
+		
+		.updateAddr {
+			width: 400px;
+			overflow: hidden;
+			padding-left: 30px;
+		}
+		.updateMain{
+			margin-left: 50px;
+		}
+		.updateAddr2,.updatePhone,.updateAddr1{
+			margin-top: 15px;
+		}
+</style>
+<body>
+<div th:replace="user/head :: html"></div>
+<div class="updateAddr">
+		<div class="updateTitle">添加地址</div>
+		<div class="updateMain">
+			<div class="updateName">
+				姓名:<br /> <input type="text" name="name" id="a_name"
+					class="login_account" placeholder="请输入姓名" /><span id="accountTip">
+					请输入姓名 </span><br />
+			</div>
+			<div class="updateAddr1">
+				地址:<br />
+				<div id="target" data-toggle="distpicker">
+					<!-- container -->
+					<select id="mprovince"></select>
+					<!-- 省 -->
+					<select id="mcity"></select>
+					<!-- 市 -->
+					<select id="mdistrict"></select>
+					<!-- 区 -->
+				</div>
+			</div>
+			<div class="updateAddr2">
+				详细地址:<br /> <input type="text" name="name" id="addr2"
+					class="login_account" placeholder="请输入详细地址" /><span
+					id="accountTip"> 请输入详细地址 </span><br />
+			</div>
+			<div class="updatePhone">
+				<div class="updateName">
+					手机号:<br /> <input type="text" name="phone" id="a_phone"
+						class="login_account" placeholder="请输入手机号" /><span
+						id="accountTip"> 请输入手机号 </span><br />
+				</div>
+			</div>
+			<div class="updateBtn">
+				<div class="btn">
+					<button class="button_jixu " onclick="quxiao()">取消</button>
+					<div style="width: 55px;"></div>
+					<button class="button_jiesuan " onclick="save()">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="user/foot :: html"></div>
+</body>
+<script>
+	$('#target').distpicker({
+		province : '北京市',
+		city : '北京城区',
+		district : '东城区'
+	});
+	function quxiao() {
+		closeL()
+	}
+
+	function save() {
+		if (!checkNull()) {
+			return;
+		}
+		if (!checkPhone()) {
+			return;
+		}
+		/*添加*/
+		var mprovince = $("#mprovince").val();
+		var mcity = $("#mcity").val();
+		var mdistrict = $("#mdistrict").val();
+
+		var name = $("#a_name").val();
+		var addr2 = $("#addr2").val();
+		var addr = mprovince + "-" + mcity + "-" + mdistrict + "-" + addr2;
+		var phone = $("#a_phone").val();
+		layer.msg('添加成功', {
+			icon : 6
+		});
+		ajaxadd();
+		setTimeout(function() {
+			window.parent.location.reload(); //刷新父页面
+		}, 2000);
+	}
+	function ajaxadd() {
+		var mprovince = $("#mprovince").val();
+		var mcity = $("#mcity").val();
+		var mdistrict = $("#mdistrict").val();
+
+		var name = $("#a_name").val();
+		var addr2 = $("#addr2").val();
+		var addr = mprovince + "-" + mcity + "-" + mdistrict + "-" + addr2;
+		var phone = $("#a_phone").val();
+		$.ajax({
+			url : "/user/order/AddrInfoController/add",
+			type : "GET",
+			data : {
+				 
+				addr : addr,
+				phone : phone,
+				name : name
+			},
+			dataType : "json",
+			success : function(data) {
+			}
+		});
+	}
+	function closeL() {
+		var index = parent.layer.getFrameIndex(window.name);
+		parent.layer.close(index);
+		parent.layer.closeAll();
+		var index = parent.layer.index; //获取当前弹层的索引号
+		parent.layer.close(index); //关闭当前弹层
+	}
+
+	function checkPhone() {
+		var phone = $("#a_phone").val();
+		if (!(/^1[3456789]\d{9}$/.test(phone))) {
+			layer.msg('手机号错误', function() {
+				//关闭后的操作
+			});
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	function checkNull() {
+		/*	var mprovince = $("#mprovince").val();
+			var mcity = $("#mcity").val();
+			var mdistrict = $("#mdistrict").val();*/
+		var name = $("#a_name").val();
+		var addr2 = $("#addr2").val();
+		var phone = $("#a_phone").val();
+		if (name == "" || phone == "" || addr2 == "") {
+			layer.msg('信息不全', function() {
+				//关闭后的操作
+			});
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
+
+</html>

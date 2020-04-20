@@ -1,0 +1,250 @@
+ .text-black{
+	margin:25px 0 16px 0
+}
+.text1{
+	margin-top:20px;
+}
+.mmj{
+	margin-bottom: 35px;
+}
+.acc-qa{
+	padding-top:20px;
+}
+.zffs {
+	width: 1.3em;
+	height: 1.3em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+.qtqr{
+	width:100%;
+	}
+.kuang {
+	position: relative;
+	width:auto;
+	height: 2200px;
+	background-color: rgba(246, 246, 246, 1);
+}
+
+.t1, .t2 {
+	width: 80px;
+	height: 80px;
+	border: 1px solid gainsboro;
+	cursor: pointer;
+}
+.detail li{
+	float:left;
+	list-style: none;
+}
+
+#dt1 img {
+	width: 500px;
+	height: 500px;
+}
+
+.discounted-price{
+	font-size:xx-large;
+	font-family:"宋体" ;
+	color: red;
+}
+.part-left {
+	position: absolute;
+	top: 3%;
+	right: 50%;
+	height: 880px;
+	width:500px;
+}
+
+.part-right {
+	top: 3%;
+	position: absolute;
+	left: 52%;
+	height: 880px;
+	width:500px;
+	padding-left: 50px;
+}
+.part-right:hover{
+	box-shadow: darkgrey 0px 0px 10px 5px ;
+}
+.part-left:hover{
+	box-shadow: darkgrey 0px 0px 10px 5px ;
+}
+
+.dt2 {
+	position: absolute;
+	left: 35%;
+}
+.abtn-container{
+	position:absolute;
+	height:50px;
+}
+/* .abtn-container .onebutton{
+	background: #ef1e0e;
+  background-image: -webkit-linear-gradient(top, #ef1e0e, #f66317);
+  background-image: -moz-linear-gradient(top, #ef1e0e, #f66317);
+  background-image: -ms-linear-gradient(top, #ef1e0e, #f66317);
+  background-image: -o-linear-gradient(top, #ef1e0e, #f66317);
+  background-image: linear-gradient(to bottom, #ef1e0e, #f66317);
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 5px;
+  text-shadow: 1px 1px 4px #060000;
+  -webkit-box-shadow: inset 0px 3px 0px 1px #f80b01;
+  -moz-box-shadow: inset 0px 3px 0px 1px #f80b01;
+  box-shadow: inset 0px 3px 0px 1px #f80b01;
+  width: 300px;
+  height:50px;
+  line-height:26px;
+  font-family: Arial;
+  color: #fffcfc;
+  font-size: 23px;
+  padding: 12px 30px 12px 30px;
+  border: solid #942911 1px;
+  text-decoration: none;
+}
+.abtn-container .onebutton:hover{
+	background: #ff0216;
+  background-image: -webkit-linear-gradient(top, #ff0216, #df3108);
+  background-image: -moz-linear-gradient(top, #ff0216, #df3108);
+  background-image: -ms-linear-gradient(top, #ff0216, #df3108);
+  background-image: -o-linear-gradient(top, #ff0216, #df3108);
+  background-image: linear-gradient(to bottom, #ff0216, #df3108);
+  color: #fffcfc;
+  text-decoration: none;
+  cursor: pointer;
+} */
+ .abtn-container .onebutton{
+	font-weight: bold;
+  	margin: auto;
+    max-width: 300px;
+    color: white;
+    line-height: 50px;
+    height: 50px;
+    width: 300px;
+    font-size: 17px;
+    border-color: #101920;
+    background-color: rgba(230,25,55,1);
+    font-weight:300;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 0.2px solid black;
+    
+	
+}
+.abtn-container .onebutton:hover{
+	background-color: rgba(230,25,55,0.89);
+	color: white;
+	transition-duration:0.7s ;
+} 
+.text-blacke ul,
+.text-blacke li{
+	 list-style: none;
+}
+.text-blacke a{
+     text-decoration: none;
+}
+.text-blacke a:hover {
+     cursor: pointer;
+     text-decoration: none;
+}
+.text-blacke a:link {
+     text-decoration: none;
+}
+
+.text-blacke{
+	position:absolute;
+	margin-top:50px;
+	height:70px;
+	width:340px;
+	padding-bottom:20px;	
+}
+.title-wrapper h1 { 
+	font-weight: bolder;
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+.guarantee-list {
+	position:absolute;
+	margin-top: 120px;
+}
+
+.dt2 :hover {
+	cursor: pointer;
+	background-color: white;
+}
+
+.dt1 img {
+	transition: 1s;
+}
+
+.xqpj {
+	position: absolute;
+	height: 3%;
+	width:100%;
+	top: 45%;
+	background-color: white;
+}
+
+.xiangqing {
+	position: absolute;
+	height: 52%;
+	width: 100%;
+	top: 48%;
+}
+
+.text1 {
+	position: absolute;
+	line-height: 100%;
+	width: 100%;
+	left: 48%;
+	/*border: 1px solid black;*/
+}
+
+.text1 h2 {
+	color: black;
+	font-size: xx-large;
+	font-weight: bolder;
+}
+
+.xqtp img {
+	width: 100%;
+	height: 800px;
+}
+
+.discrip {
+	position:absolute;
+	color: white;
+	width:100%;
+	font-weight: bolder;
+	font-size: x-large;
+	line-height: 800px;
+	text-align:center;
+	top:0px;
+	height:800px;
+}
+
+.lmore {
+	position: absolute;
+	color: white;
+	width:100%;
+	font-weight: bolder;
+	font-size: x-large;
+	top: 400px;
+	text-align:center;
+	line-height:400px;
+	height:400px: 
+}
+.lmore :hover{
+	cursor: pointer;
+	background-color: black;
+}
+.clearfix dt {
+	font-weight: bolder;
+}
+
+.clearfix {
+	font-size: 15px;
+	margin: 20px;
+}

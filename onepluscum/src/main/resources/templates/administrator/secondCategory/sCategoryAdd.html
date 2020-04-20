@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>二级商品添加</title>
+
+    <script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.validate.js}"></script>
+    <script type="text/javascript" th:src="@{/js/iconfontadminadd.js}" ></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $("#form").validate({
+                rules:{
+                    name:{
+                        required:true,
+                        remote:"/AdminSecondCategoryController/validnameAdd"
+                    },
+                    photo:{
+                        required:true,
+
+                    },
+
+
+                },
+                messages:{
+                    name:{
+                        remote:"已存在"
+                    },
+
+                }
+            })
+        });
+        function fanhui() {
+            location.href="/AdminSecondCategoryController/list";
+        }
+    </script>
+    <style type="text/css">
+        .iconadminadd {
+            width: 4em;
+            height: 4em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .admin-add-ys{
+            border: 1px solid beige;
+            width: 800px;
+            margin:auto;
+            background-color: gainsboro;
+        }
+        .admin-add-fh{
+            background-color: orange;
+            color: white;
+            font-family: "微软雅黑";
+            font-weight: bold;
+            width: 105px;
+            height: 40px;
+            margin:auto;
+            border: 2px solid gainsboro;
+        }
+        .admin-add-tj:hover,
+        .admin-add-fh:hover{
+            color: gainsboro;
+            cursor: pointer;
+            background: orangered;
+        }
+        .addmin-add-radio{
+            cursor: pointer;
+        }
+        .smlzzzz{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div class="admin-add-ys">
+    <form id="form" action="/AdminSecondCategoryController/add" method="post">
+        <div class="smlzzzz">
+            <p>
+                <svg class="iconadminadd" aria-hidden="true">
+                    <use xlink:href="#icon-yijia"></use>
+                </svg>
+            </p>
+            <h1>添加二级分类</h1><br>
+        </div>
+        <div style="margin-left: 40%;">
+            <p>名称：<input type="text" id="name" name="name"/></p>
+            <p>一级分类：<select name="cid">
+
+                    <option th:each="te:${list}" th:value="${te.id }" th:text="${te.cname }"></option>
+
+            </select></p>
+        </div>
+        <div class="smlzzzz">
+            <p><input class="admin-add-fh" type="submit" value="添加"/>
+                <button class="admin-add-fh" onclick="fanhui()">返回</button>
+            </p>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>

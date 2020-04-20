@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title></title>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" th:href="${pageContext.request.contextPath}/css/common.css" />
+<link rel="stylesheet" type="text/css" th:href="${pageContext.request.contextPath}/css/regSubmitSuccess.css" />
+</head>
+<body>
+	<div class="paySucess">
+		<div style="height: 40px;"></div>
+		<script type="text/javascript" th:src="@{/css/注册成功/iconfont.js}"></script>
+		<div class="paySucess_top">
+			<svg class="successPay_icon" aria-hidden="true">
+				<use xlink:href="#icon-tijiaochenggong1"></use>
+			</svg>
+			<p class="s_font">提交成功</p>
+		</div>
+		<div class="paySucess_msg">
+			<div class="tip1">您已成功提交注册信息</div>
+			<div class="tip2">系统给您发送了一封邮件，请前往邮箱进行激活（15分钟内有效）。</div>
+		</div>
+		<div class="paySucess_btn">
+			<div class="total_btn ">
+				<button class="button_jiesuan " onclick="toEmail()">前往激活</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function toEmail() {
+		window.open("https://mail.163.com");
+	}
+</script>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>修改一级管理</title>
+ 
+<script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.validate.js}"></script>
+<script type="text/javascript" th:src="@{/js/iconfontadminadd.js}" ></script>
+ 
+<script type="text/javascript">
+	$(function() {
+		$("#form").validate({
+			rules:{
+				name:{
+					required:true,
+						remote:{
+							url:"/AdminCategoryController/validCategoryUpdate",
+							type:"POST",
+							dataType:"json",
+							data:{
+								id:function(){
+									return $("#id").val();
+								},
+								name:function(){
+									return $("#name").val();
+								}
+							}
+						}
+				 
+				},
+				password:{
+					required:true,
+				}
+			
+			},
+			messages:{
+				name:{
+					remote:"名称已存在"
+				},
+			}
+		})
+	});
+	function fanhui() {
+		location.href="/AdminCategoryController/list";
+	}
+	</script>
+	<style type="text/css">
+ 	.iconadminadd {
+			  width: 4em;
+			  height: 4em;
+			  vertical-align: -0.15em;
+			  fill: currentColor;
+			  overflow: hidden;
+			}
+			.admin-add-ys{
+				border: 1px solid beige;
+				width: 800px;
+				margin:auto;
+				background-color: gainsboro;
+			}
+			.admin-add-fh{
+				background-color: orange;
+				color: white;
+				font-family: "微软雅黑";
+				font-weight: bold;
+				width: 105px;
+				height: 40px;
+				margin:auto;
+				border: 2px solid gainsboro;
+			}
+			.admin-add-tj:hover,
+			.admin-add-fh:hover{
+				color: gainsboro;
+				cursor: pointer;
+				background: orangered;
+			}
+			.addmin-add-radio{
+				cursor: pointer;
+			}
+			.smlzzzz{
+				text-align: center;
+			}
+ 	</style>
+</head>
+
+<body>
+<div class="admin-add-ys"> 
+	<form id="form" th:action="@{/AdminCategoryController/update}" method="post" enctype="multipart/form-data"> 
+		 <div class="smlzzzz">
+		<p>
+			<svg class="iconadminadd" aria-hidden="true">
+				<use xlink:href="#icon-yijia"></use>
+			</svg>
+		</p>
+		<h1>修改一级分类</h1><br>
+		</div>
+		<div style="margin-left: 40%;">
+		<p><input type="hidden" id="id" name="id" th:value="${category.id }"/></p>
+		<p>名称：<input type="text" id="name" name="name" th:value="${category.cname }"/></p>
+		 <p>图片：<input type="file" name="photo"  id="image"  /><img th:src="|/${category.photo}|" width="100px" height="100px"> </p>
+		</div>
+		 <div class="smlzzzz">
+		<p><input class="admin-add-fh" type="submit" value="修改"/>
+			<button class="admin-add-fh" onclick="fanhui()">返回</button>
+		</p>
+		</div>
+	</form>
+	</div>
+</body>
+</html>

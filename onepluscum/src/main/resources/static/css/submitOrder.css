@@ -1,0 +1,294 @@
+.cart {
+			text-align: center;
+			box-shadow: 0px 1px 1px #aaaaaa;
+		}
+		
+		.cart_main {
+			margin: auto;
+			width: 960px;
+			/*background-color: #F9F9F9;*/
+			background-color: white;
+		}
+		
+		.cart_title {
+			font-size: 18px;
+			height: 60px;
+			text-align: left;
+			margin-top: 10px;
+			background-color: white;
+			line-height: 60px;
+			padding-left: 30px;
+			box-shadow: 0px 1px 1px #aaaaaa;
+		}
+		
+		.hrLine {
+			vertical-align: middle;
+			display: inline-block;
+			margin: auto;
+			width: 95%;
+		}
+		
+		.car_item {
+			margin: auto;
+			display: flex;
+			line-height: 90px;
+			/*padding-left: 30px;*/
+			height: 120px;
+			width: 1140px;
+			border-bottom: 0px solid #efefef;
+			margin-top: 10px;
+		}
+		
+		.car_item_img {
+			width: 220px;
+			height: 84px;
+			/*background-color: aquamarine;*/
+		}
+		
+		.car_item_name {
+			width: 330px;
+			/*background-color: royalblue;*/
+			cursor: pointer;
+		}
+		
+		.car_item_price {
+			width: 170px;
+			/*background-color: #009F95;*/
+		}
+		
+		.car_item_priceCount {
+			width: 170px;
+			/*background-color: #009F95;*/
+		}
+		
+		.car_item_count {
+			margin-top: 14px;
+			width: 170px;
+			/*background-color: #01AAED;*/
+			height: 28px;
+		}
+		
+		.car_item_del {
+			margin-top: 5px;
+			width: 40px;
+			/*background-color: #2D93CA;*/
+			cursor: pointer;
+		}
+		
+		.car_item img {
+			margin-top: 10px;
+			width: 84px;
+			height: 84px;
+			cursor: pointer;
+		}
+		
+		.total {
+			width: 100%;
+			height: 200px;
+			/*background-color: aquamarine;*/
+			margin-top: 40px;
+			display: flex;
+			color: #828282;
+			font-weight: 540;
+		}
+		
+		.total_count {
+			width: 450px;
+			height: 23px;
+			font-size: 14px;
+			text-align: left;
+			margin-left: 50px;
+		}
+		
+		.total_right {
+			width: 410px;
+			height: 198px;
+			/*background-color: royalblue;*/
+			text-align: left;
+		}
+		
+		.zongjia {
+			height: 50px;
+			line-height: 50px;
+			position: relative;
+		}
+		
+		.total_Price {
+			position: absolute;
+			right: 10px;
+			top: 0px;
+			font-size: 24px;
+			color: black;
+		}
+		
+		.button_jiesuan {
+			border-radius: 3px;
+			background-color: #EB0028;
+			/* Green */
+			/*border: none;*/
+			color: white;
+			/*padding: 10px 32px;*/
+			height: 50px;
+			width: 410px;
+			text-align: center;
+			/*text-decoration: none;*/
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+			border: 0px solid #555555;
+		}
+		
+		.button_jiesuan:hover {
+			background-color: #b8001f;
+			color: white;
+		}
+		
+		.total_btn {
+			margin-top: 30px;
+			display: flex;
+		}
+		
+		.orderItem-item {
+			height: 100px;
+			display: flex;
+			width: 850px;
+			margin-left: 60px;
+			border-bottom: 1px solid gainsboro;
+			line-height: 100px;
+			cursor: pointer;
+		}
+		
+		.orderItem-item-img {
+			margin-top: 10px;
+			width: 78px;
+			height: 78px;
+		}
+		
+		.orderItem-item-img img {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.orderItem-item-name {
+			margin-top: 10px;
+			height: 80px;
+			margin-left: 30px;
+			width: 260px;
+			font-size: 14px;
+			color: #333333;
+			line-height: 80px;
+		}
+		
+		.orderItem-item-val {
+			margin-top: 10px;
+			width: 350px;
+			line-height: 80px;
+			display: flex;
+			padding-left: 50px;
+			height: 80px;
+		}
+		
+		.val-span {
+			width: 116px;
+			margin: auto;
+			text-align: center;
+		}
+		
+		.orderItem_total {
+			width: 860px;
+			height: 66.5px;
+		}
+		
+		.orderItem_btn {
+			width: 860px;
+			height: 60px;
+		}
+		
+		.orderItem_total {
+			display: flex;
+		}
+		
+		.order-list {
+			display: flex;
+			margin-top: 30px;
+			height: 40px;
+		}
+		
+		.shangpinqingdan {
+			font-size: 16px;
+			width: 712px;
+			text-align: left;
+			padding-left: 50px;
+			color: #828282;
+		}
+		
+		.xiugai {
+			margin-left: 40px;
+			font-size: 14px;
+			color: #0099cc;
+			cursor: pointer;
+		}
+		
+		.address {
+			width: 960px;
+			/*height: 200px;*/
+		}
+		
+		.addrInf {
+			height: 92px;
+			width: 860px;
+			text-align: left;
+			margin-left: 50px;
+			font-size: 16px;
+			color: #000000;
+			border-bottom: 1px solid gainsboro;
+		}
+		
+		.expressInf {
+			height: 92px;
+			width: 860px;
+			text-align: left;
+			margin-left: 50px;
+			font-size: 16px;
+			color: #000000;
+		}
+		
+		.oname {
+			font-size: 17px;
+			font-weight: 600;
+		}
+		
+		.expretype {
+			font-size: 17px;
+			font-weight: 600;
+		}
+		
+		.addr_phone {
+			margin-top: 10px;
+		}
+		
+		.eInf {
+			height: 92px;
+			width: 860px;
+			text-align: left;
+			margin-left: 50px;
+			font-size: 16px;
+			color: #000000;
+		}
+		
+		.express {
+			width: 960px;
+			height: 100px;
+		}
+		
+		.expressTip {
+			font-weight: 400;
+			font-size: 14px;
+			color: #000;
+			opacity: .4;
+			margin-top: 10px;
+		}

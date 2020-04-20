@@ -1,0 +1,267 @@
+	.cart {
+			text-align: center;
+			box-shadow: 0px 1px 1px #aaaaaa;
+		}
+		
+		.cart_main {
+			margin: auto;
+			width: 1200px;
+			/*background-color: #F9F9F9;*/
+			background-color: white;
+		}
+		
+		.qitian_all {
+			margin: auto;
+			width: 1200px;
+			background-color: #F9F9F9;
+			height: 124.4px;
+			margin-top: 30px;
+			box-shadow: 0px 1px 1px #aaaaaa;
+		}
+		
+		.qitian {
+			width: 2em;
+			height: 2em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+		
+		.qitian_item {
+			width: 266.5px;
+			height: 86px;
+			float: left;
+			padding: 0px 15px;
+			font-size: 16px;
+			padding-top: 30px;
+			font-family: MYingHei W5, SlateForOnePlusRegular, Microsoft Yahei, sans-serif;
+			font-weight: 400;
+		}
+		
+		.cart_title {
+			font-size: 18px;
+			height: 60px;
+			text-align: left;
+			margin-top: 10px;
+			background-color: white;
+			line-height: 60px;
+			padding-left: 30px;
+			box-shadow: 0px 1px 1px #aaaaaa;
+		}
+		
+		.hrLine {
+			vertical-align: middle;
+			display: inline-block;
+			margin: auto;
+			width: 95%;
+		}
+		
+		.car_item {
+			margin: auto;
+			display: flex;
+			line-height: 90px;
+			/*padding-left: 30px;*/
+			height: 120px;
+			width: 1140px;
+			border-bottom: 1px solid gainsboro;
+			margin-top: 10px;
+		}
+		
+		.car_item_img {
+			width: 220px;
+			height: 84px;
+			/*background-color: aquamarine;*/
+		}
+		
+		.car_item_name {
+			width: 330px;
+			/*background-color: royalblue;*/
+			cursor: pointer;
+		}
+		
+		.car_item_price {
+			width: 170px;
+			/*background-color: #009F95;*/
+		}
+		
+		.car_item_priceCount {
+			width: 170px;
+			/*background-color: #009F95;*/
+		}
+		
+		.car_item_count {
+			margin-top: 14px;
+			width: 170px;
+			/*background-color: #01AAED;*/
+			height: 28px;
+		}
+		
+		.car_item_del {
+			margin-top: 5px;
+			width: 40px;
+			/*background-color: #2D93CA;*/
+			cursor: pointer;
+		}
+		
+		.car_item img {
+			margin-top: 10px;
+			width: 84px;
+			height: 84px;
+			cursor: pointer;
+		}
+		
+		.total {
+			width: 100%;
+			height: 200px;
+			/*background-color: aquamarine;*/
+			margin-top: 40px;
+			display: flex;
+			color: #828282;
+			font-weight: 540;
+		}
+		
+		.total_count {
+			width: 670px;
+			height: 23px;
+			font-size: 14px;
+			text-align: left;
+			margin-left: 50px;
+		}
+		
+		.total_right {
+			width: 410px;
+			height: 198px;
+			/*background-color: royalblue;*/
+			text-align: left;
+		}
+		
+		.zongjia {
+			height: 50px;
+			line-height: 50px;
+			position: relative;
+		}
+		
+		.total_Price {
+			position: absolute;
+			right: 10px;
+			top: 0px;
+			font-size: 24px;
+			color: black;
+		}
+		
+		.button_jixu {
+			border-radius: 8px;
+			background-color: #4CAF50;
+			/* Green */
+			/*border: none;*/
+			color: white;
+			/*padding: 10px 32px;*/
+			height: 54px;
+			width: 200px;
+			text-align: center;
+			/*text-decoration: none;*/
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+			background-color: white;
+			color: black;
+			border: 1px solid #555555;
+		}
+		
+		.button_jixu:hover {
+			background-color: #555555;
+			color: white;
+		}
+		
+		.button_jiesuan {
+			border-radius: 8px;
+			background-color: #EB0028;
+			/* Green */
+			/*border: none;*/
+			color: white;
+			/*padding: 10px 32px;*/
+			height: 54px;
+			width: 200px;
+			text-align: center;
+			/*text-decoration: none;*/
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+			border: 0px solid #555555;
+		}
+		
+		.button_jiesuan:hover {
+			background-color: #b8001f;
+			color: white;
+		}
+		
+		.total_btn {
+			margin-top: 30px;
+			display: flex;
+		}
+		/*购物车*/
+		
+		.btn-numbox {
+			margin-top: 20px;
+			margin-left: 30px;
+			/*background-color: aquamarine;*/
+			width: 100px;
+			height: 28px;
+		}
+		
+		.btn-numbox li {
+			float: left;
+		}
+		
+		.btn-numbox li .number {
+			display: inline-block;
+			font-size: 12px;
+			color: #808080;
+			vertical-align: sub;
+		}
+		
+		.btn-numbox .count {
+			overflow: hidden;
+			/*margin: 0 16px 0 -20px;*/
+		}
+		
+		.btn-numbox .count .num-jian,
+		.input-num,
+		.num-jia {
+			vertical-align: top;
+			display: inline-block;
+			width: 28px;
+			height: 28px;
+			line-height: 28px;
+			text-align: center;
+			font-size: 18px;
+			color: #999;
+			cursor: pointer;
+			border: 1px solid #e6e6e6;
+		}
+		/*输入框内容*/
+		
+		.input-num {
+			width: 32px;
+			height: 28px;
+			color: darkgray;
+			border-left: 0;
+			border-right: 0;
+			font-size: 14px;
+		}
+		
+		.del_icon {
+			width: 1.5em;
+			height: 1.5em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}

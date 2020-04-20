@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org"><head>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/wqcss/daohang.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/wqcss/goods.css}" />
+
+<script th:src="@{/css/wqcss/page2iconfont.js}"></script>
+	<script type="text/javascript">
+
+		$(function(){
+			var width=$(".drop-down").width();
+			$(".secondlist").width(width)
+		})
+
+	</script>
+</head>
+<body>
+<div th:replace="user/head :: html"></div>
+	<div>
+
+		<div class="head">
+			<img th:src="@{${c.photo}}" th:alt="${c.cname}" style="height: 362.77px;"/>
+			<span class="categor" th:text="${c.cname}"></span>
+		</div>
+		
+		<div class="main">
+			<div class="header">
+				<div class="head-nav">
+					<div class="head-nav-con clearFloat">
+						<ul>
+							<li><a th:href="@{/goodspage/list}">全部商品</a></li>
+							<li th:each="category:${categories}" class="drop-down">
+							<a th:href="@{|/goodspage/list2?cid=${category.id}|}" th:text="${category.cname}"> </a>
+								<ul class="drop-down-content">
+									<li th:each="second:${category.secondcategories}" class="secondlist">
+										<a  th:href="@{|/goodspage/list3?scid=${second.id}|}" th:text="${second.scname}"></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="kuang">
+			<svg th:unless="${list!=null}"  class="icon123" aria-hidden="true">
+			  <use xlink:href="#icon-dianpumeiyoushangpin"></use>
+			</svg>
+				<div th:if="${list!=null}" th:each="p:${list}" class="sp1">
+						<a th:href="@{|/goodspage/goodsPage?pid=${p.id}|}"> 
+						<img th:src="|/${p.photopath}|" />
+						</a>
+						<div th:if="${p.ishot eq '1'}" class="xp">
+							<span class="xpzt"> 热卖</span>
+						</div>
+						<div class="pname">
+							<span class="ppname" th:text="${p.pname}"></span>
+						</div>
+						<div class="pprice" th:if="${p.preprice==null || p.price >= p.preprice || p.preprice eq '0' }">
+							<span class="ppprice" th:text="|现价￥${p.price}|"></span>
+						</div>
+						<div class="pprice" th:if="${p.preprice!=null &amp;&amp; p.price lt p.preprice &amp;&amp; p.price gt 0}">
+							<del class="ppprice2" th:text="|原价￥${p.preprice}    |"></del>
+							<span class="ppprice" th:text="|现价￥${p.price}|"></span>
+						</div>
+				</div>
+		</div>
+	</div>
+	<div style="height:100px;width:20px;border:1px solid red"></div>
+</body>
+
+</html>

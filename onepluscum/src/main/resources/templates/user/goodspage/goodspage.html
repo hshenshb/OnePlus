@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org"><head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+	<script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/css/wqcss/page2iconfont.js}"></script>
+<!-- 轮播图 -->
+<link rel="stylesheet"
+	th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}"/>
+
+<script th:src="@{/js/layer-v3.1.1/layer/layer.js}"></script>
+<script type="text/javascript"
+	th:src="@{/js/bootstrap.min.js}"></script>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/wqcss/common_pc.css}" />
+<!-- 菜单目录 和 商品列表 -->
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/wqcss/daohang.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/wqcss/goods.css}" />
+<script type="text/javascript">
+
+function query() {
+	//location.href="/goodspage/list";
+	var name=document.getElementById("name").value;
+	location.href="/goodspage/list?curPage=1&name="+name;
+}  
+function fenye(curPage) {
+	var div1=document.getElementById("abcdef");
+		 $.ajax({ 
+		        type: "POST", 
+		        cache: false, 
+		        data: "curPage="+curPage,
+		        async: false, 
+		        url: "/goodspage/list", 
+		        success: function(userinfo) { 
+		        	div1.innerHTML=userinfo;
+		        }
+		    }); 	
+}
+
+</script>
+	<script type="text/javascript">
+
+		$(function(){
+			var width=$(".drop-down").width();
+			$(".secondlist").width(width)
+		})
+
+	</script>
+</head>
+<body>
+<div th:replace="user/head :: html"></div>
+<div id="abcdef">
+	
+		<div id="myCarousel" class="carousel slide">
+
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+			<!-- 轮播（Carousel）项目 -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<a th:href="@{/goodspage/goodsPage?pid=1}"> <img
+						th:src="@{/img/l1(1).jpg}"
+						alt="one slide"/>
+					</a>
+				</div>
+				<div class="item">
+					<a th:href="@{/goodspage/goodsPage?pid=2}"> <img
+						th:src="@{/img/l2.jpg}"
+						alt="two slide"/>
+					</a>
+				</div>
+				<div class="item">
+					<a href="@{/goodspage/goodsPage?pid=9}"> <img
+						th:src="@{/img/l3.jpg}"
+						alt="three slide"/>
+					</a>
+				</div>
+				<div class="item">
+					<a href="#"> <img
+						th:src="@{/img/l4.jpg}"
+						alt="four slide"/>
+					</a>
+				</div>
+			</div>
+			<!-- 轮播（Carousel）导航 -->
+			<a class="left carousel-control" href="#myCarousel" role="button"
+				data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel" role="button"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		<div class="main">
+			<div class="header">
+				<div class="head-nav">
+					<div class="head-nav-con clearFloat">
+						<ul>
+							<li><a th:href="@{/goodspage/list}">全部商品</a></li>
+							<li th:each="category:${categories}" th:object="${category}" class="drop-down">
+								<a th:href="@{|/goodspage/list2?cid=*{id}|}" th:text="*{cname}"></a>
+								<ul class="drop-down-content">
+									<li th:each="second:*{secondcategories}" th:object="${second}" class="secondlist">
+										<a th:href="@{|/goodspage/list3?scid=*{id}|}"  th:text="*{scname}"></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="kuang">
+			<svg th:if="${list==null}"  class="icon123" aria-hidden="true">
+			  <use xlink:href="#icon-dianpumeiyoushangpin"></use>
+			</svg>
+				<div th:if="${list!=null}" th:each="p:${list}" class="sp1">
+					<a th:href="@{|/goodspage/goodsPage?pid=${p.id}|}"> 
+					<img th:src="|/${p.photopath}|" th:alt="${p.pname}" />
+					</a>
+					<div th:if="${p.ishot eq '1'}" class="xp">
+						<span class="xpzt">热卖 </span>
+					</div>
+					<div class="pname">
+						<span class="ppname" th:text="${p.pname}"></span>
+					</div>
+					<div class="pprice" th:if="${p.preprice==null || p.price >= p.preprice || p.preprice eq '0' }">
+						<span class="ppprice" th:text="|现价￥${p.price}|"></span>
+					</div>
+					<div class="pprice" th:if="${p.preprice!=null &amp;&amp; p.price lt p.preprice &amp;&amp; p.price gt 0}">
+						<del class="ppprice2" th:text="|原价￥${p.preprice}    |"></del>
+						<span class="ppprice" th:text="|现价￥${p.price}|"></span>
+					</div>
+				</div>
+		</div>
+		<div class="selectGoods">
+			<input id="name" th:value="${p.pname}"/>
+			<button onclick="query()">查询</button>
+		</div>
+
+		<div class="fenyed">
+			<button class="fenyea" th:onclick="|fenye(1)|">首页</button>
+			<button class="fenyea" th:onclick="|fenye(${pageInfo.prePage==0?1:pageInfo.prePage})|">上一页</button>
+			<button th:if="${pageInfo.pages!=0}" th:each="i:${#numbers.sequence(1,pageInfo.pages)}" th:text="${i}" class="fenyea" th:onclick="|fenye(${i})|"></button>
+			<button class="fenyea" th:onclick="|fenye(${pageInfo.nextPage==0?pageInfo.pages:pageInfo.nextPage})|">下一页</button>
+			<button class="fenyea" th:onclick="|fenye(${pageInfo.pages})|">尾页</button>
+		</div>
+	</div>
+</body>
+
+</html>

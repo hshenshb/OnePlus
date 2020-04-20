@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org"><head>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<script th:src="@{/css/wqcss/支付方式/iconfont.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/js/layer-v3.1.1/layer/layer.js}"></script>
+	<script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+<script type="text/javascript">
+
+		$(function() {
+					$(".num-jian").click(function() {
+						var input = $(this).parent().next().children();
+						var val = input.val();
+						if(parseInt(val) > 1) {
+							val = parseInt(val) - 1;
+							input.val(val);
+						}else{
+							layer.msg('不能再少了', function(){	});
+						}
+					})
+				})
+				
+				function iaisdja(){
+					var domInput = document.getElementById("input-num");//找到id是ipt的input节点
+					var count= domInput.value;
+					var ikucun = document.getElementById("ikucun");//找到id是ipt的input节点
+					var kucun= ikucun.value;//获取值
+					if(count> 10) {
+						layer.msg('每个商品单次最多购买十件', function(){	});
+						domInput.value=10;
+					}else if(parseInt(count)>parseInt(kucun)) {
+						layer.msg('库存不足', function(){	});
+						domInput.value=parseInt(kucun);
+					}else if(count<1) {
+						layer.msg('请输入正确购买数量', function(){	});
+						domInput.value=1;
+					}
+				}
+				
+			 	function addCar(id){
+
+
+					var domInput = document.getElementById("input-num");//找到id是ipt的input节点
+					var count= domInput.value;//获取值
+					location.href="/cartController/add?id="+id+"&count="+count;
+			
+					}
+
+</script>
+<style type="text/css">
+.btn-numbox {
+	overflow: hidden;
+	margin-top: 0px;
+}
+
+.btn-numbox li {
+	float: left;
+}
+
+.btn-numbox li .number, .kucun {
+	display: inline-block;
+	font-size: 12px;
+	color: #808080;
+	vertical-align: sub;
+}
+
+.btn-numbox .count {
+	overflow: hidden;
+	margin: 0 16px 0 -20px;
+}
+
+.btn-numbox .count .num-jian, .input-num, .num-jia {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	font-size: 18px;
+	color: #999;
+	cursor: pointer;
+	border: 1px solid #e6e6e6;
+}
+
+.btn-numbox .count .input-num {
+	width: 58px;
+	height: 26px;
+	color: #333;
+	border-left: 0;
+	border-right: 0;
+}
+
+.text-black {
+	margin: 25px 0 16px 0
+}
+
+.text1 {
+	margin-top: 20px;
+}
+
+.mmj {
+	margin-bottom: 35px;
+}
+
+.acc-qa {
+	padding-top: 20px;
+}
+
+.zffs {
+	width: 1.3em;
+	height: 1.3em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+
+.kuang {
+	position: relative;
+	height: 2200px;
+	background-color: rgba(246, 246, 246, 1);
+}
+
+.t1, .t2 {
+	width: 80px;
+	height: 80px;
+	border: 1px solid gainsboro;
+	cursor: pointer;
+}
+
+.detail li {
+	float: left;
+	list-style: none;
+}
+
+#dt1 img {
+	width: 500px;
+	height: 500px;
+}
+
+.discounted-price {
+	font-size: xx-large;
+	font-family: "宋体";
+	color: red;
+}
+
+.part-left {
+	position: absolute;
+	top: 3%;
+	right: 50%;
+	height: 880px;
+	width: 500px;
+}
+
+.part-right {
+	top: 3%;
+	position: absolute;
+	left: 52%;
+	height: 880px;
+	width: 500px;
+	padding-left: 50px;
+}
+
+.part-right:hover {
+	box-shadow: darkgrey 0px 0px 10px 5px;
+}
+
+.part-left:hover {
+	box-shadow: darkgrey 0px 0px 10px 5px;
+}
+
+.dt2 {
+	position: absolute;
+	left: 35%;
+}
+
+.abtn-container {
+	position: absolute;
+	height: 50px;
+}
+
+.abtn-container .onebutton {
+	font-weight: bold;
+	margin: auto;
+	max-width: 300px;
+	color: white;
+	line-height: 50px;
+	height: 50px;
+	width: 300px;
+	font-size: 17px;
+	border-color: #101920;
+	background-color: rgba(230, 25, 55, 1);
+	font-weight: 300;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 4px;
+	border: 0.2px solid black;
+}
+
+.abtn-container .onebutton:hover {
+	background-color: rgba(230, 25, 55, 0.89);
+	color: white;
+	transition-duration: 0.7s;
+}
+
+.text-blacke ul, .text-blacke li {
+	list-style: none;
+}
+
+.text-blacke a {
+	text-decoration: none;
+}
+
+.text-blacke a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.text-blacke a:link {
+	text-decoration: none;
+}
+
+.text-blacke {
+	position: absolute;
+	margin-top: 50px;
+	height: 70px;
+	width: 340px;
+	padding-bottom: 20px;
+}
+
+.title-wrapper h1 {
+	font-weight: bolder;
+	margin-top: 80px;
+	margin-bottom: 30px;
+}
+
+.guarantee-list {
+	position: absolute;
+	margin-top: 120px;
+}
+
+.dt2 :hover {
+	cursor: pointer;
+	background-color: white;
+}
+
+.dt1 img {
+	transition: 1s;
+}
+
+.xqpj {
+	position: absolute;
+	height: 3%;
+	width: 100%;
+	top: 45%;
+	background-color: white;
+}
+
+.xiangqing {
+	position: absolute;
+	height: 52%;
+	top: 48%;
+}
+
+.text1 {
+	position: absolute;
+	line-height: 100%;
+	left: 48%;
+	/*border: 1px solid black;*/
+}
+
+.text1 h2 {
+	color: black;
+	font-size: xx-large;
+	font-weight: bolder;
+}
+
+.xqtp img {
+	width: 100%;
+	height: 800px;
+}
+
+.discrip {
+	position: absolute;
+	color: white;
+	width: 100%;
+	font-weight: bolder;
+	font-size: x-large;
+	line-height: 800px;
+	text-align: center;
+	top: 0px;
+	height: 800px;
+}
+
+.lmore {
+	position: absolute;
+	color: white;
+	width: 100%;
+	font-weight: bolder;
+	font-size: x-large;
+	top: 400px;
+	text-align: center;
+	line-height: 400px;
+	height: 400px:
+}
+
+.lmore :hover {
+	cursor: pointer;
+	background-color: black;
+}
+
+.clearfix dt {
+	font-weight: bolder;
+}
+
+.clearfix {
+	font-size: 15px;
+	margin: 20px;
+}
+</style>
+</head>
+<body>
+<div th:replace="user/head :: html"></div>
+<div class="qtqr">
+		<div class="kuang">
+			<div class="part-left">
+				<div id="dt1" class="dt1">
+					<img  th:src='|/${p.photopath}|' style="display:block" id="img123"/>
+					<img  th:src='|/${p.photopath2}|' style="display:none" id="img456"/>
+				</div>
+				<div class="dt2">
+					<img th:src="|/${p.photopath}|" id="t1" class="t1" /> <img
+						th:src="|/${p.photopath}|" id="t2" class="t2" />
+				</div>
+
+			</div>
+			<div class="part-right">
+				<div class="title-wrapper">
+					<h1 class="js-name" th:text="${p.pname}"></h1>
+				</div>
+				<h4 class="responsive">
+					<span class="discounted-price" th:text="|¥${p.price}&nbsp; |"></span>
+				</h4>
+
+				<div class="abtn-container" id="asdwerv">
+					<button type="button" id="gocar" class="onebutton"
+						th:onclick="@{|addCar(${p.id})|}">加入购物车</button>
+
+				</div>
+
+				<div class="text-blacke">
+					<ul class="btn-numbox" style="margin-top:20px;">
+						<li><span class="number">数量&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+						<li>
+							<ul class="count">
+								<li><span id="num-jian" class="num-jian">-</span></li>
+
+								<li><input type="text" class="input-num" id="input-num"
+									name="input-num" oninput="iaisdja()" value="1" /></li>
+								<li><span id="num-jia" class="num-jia"
+									th:onclick="|jiayz(${p.id})|">+</span></li>
+							</ul>
+						</li>
+						<li><span class="kucun" th:text="|（库存:${p.leftover}）|">
+						<input type="hidden" id="ikucun" th:value="${p.leftover}" /></span></li>
+					</ul>
+					&nbsp;
+				</div>
+
+
+
+				<div class="guarantee-list">
+					<div class="guarantee-item">
+						<div class="title-box">
+							<h5 class="title text-black">售后政策</h5>
+						</div>
+						<div class="detail close">
+							<span class="text">7 天无理由退货 </span>
+						</div>
+					</div>
+					<div class="guarantee-item">
+						<div class="title-box">
+							<h5 class="title text-black">物流信息</h5>
+						</div>
+						<div class="detail close">
+							<span class="text">全场满99元包邮，当天18点前支付24小时内发货 </span>
+						</div>
+					</div>
+					<div class="guarantee-item">
+						<div class="title-box">
+							<h5 class="title text-black">支付方式</h5>
+						</div>
+						<div class="detail close">
+							<ul class="pay-way-wrap pay-way-cn">
+
+								<li class="pay-way-item"><svg class="zffs"
+										aria-hidden="true">
+										<use xlink:href="#icon-zhifubao"></use>
+									</svg>支付宝</li>
+								<li class="pay-way-item"><svg class="zffs"
+										aria-hidden="true">
+										<use xlink:href="#icon-weixin"></use>
+									</svg>微信支付</li>
+								<li class="pay-way-item"><svg class="zffs"
+										aria-hidden="true">
+										<use xlink:href="#icon-zhifupingtai-yinlian"></use>
+									</svg>银联支付</li>
+								<li class="pay-way-item"><svg class="zffs"
+										aria-hidden="true">
+										<use xlink:href="#icon-yinhangqia"></use>
+									</svg>信用卡</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function() {
+				$("#t1").click(function() {
+					$("#img456").attr("style","display:none");
+					$("#img123").attr("style","display:block");
+				});
+				$("#t2").click(function() {
+					$("#img123").attr("style","display:none");
+					$("#img456").attr("style","display:block");
+				});
+			});
+		</script>
+			<div class="xqpj">
+				<div class="text1">
+					<h2>商品详情</h2>
+				</div>
+			</div>
+			<div class="xiangqing">
+				<div class="xqtp">
+					<img th:src="|/${p.photopath3}|" />
+					<div class="discrip">
+						<span class="discrip2" th:text="${p.discrip}"></span>
+					</div>
+
+					<a> <span class="lmore">了解更多</span>
+					</a>
+				</div>
+
+				<div class="acc-qa">
+					<dl class="clearfix">
+						<dt>三包服务介绍</dt>
+						<dd>
+							<div>
+								承保周期：充电器、数据线、移动电源、耳机（有线/无线耳机），自签收之日起，可享受七天无理由退货，十五天换货，一年内保修（森海塞尔耳机两年内保修）；皮套、保护壳、屏幕保护膜、所有生活馆商品，自签收之日起，可享受七天无理由退货，十五天换货。
+							</div>
+							<div class="mmj">
+								退换货要求：商品及包装保持一加出售时原状、配件及单据完好、齐全，并提供相关订单号、发票及三包凭证；非产品问题的退换，需产品包装完好，且仅退换一次，消费者承担邮费；产品问题的退换，请先联系一加人工客服，确认产品问题后，提供退换相关凭证，使用指定物流到付的方式寄回给一加。
+							</div>
+						</dd>
+					</dl>
+					<dl class="clearfix">
+						<dt>
+							签收注意事项<br/>(签收时请注意以下信息 )
+						</dt>
+						<dd>
+							<div>若存在包装破损等影响签收的原因，请直接拒收，并及时联系一加人工客服协助处理；</div>
+							<div>签收后请尽快查看商品（配件、发票、三包凭证等）是否完整，若发现商品错误、商品少发、商品表面有质量问题等，请于24小时内联系一加人工客服协助处理.</div>
+							<div>根据三包政策，符合退换货条件的，请拨打400-888-1111或通过商城在订单中心申请退换货，提供三包的相关凭证，会有专门的人员为您进行处理。</div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript">
+
+function jiayz(id){
+	$
+	.ajax({
+		url : "/cartController/validCount",
+		type : "GET",
+		data : {
+			pid:id
+		},
+		dataType : "json",
+		success : function(data) {
+			//返回的是购物车里数量
+			var domInput = document.getElementById("input-num");//找到id是ipt的input节点
+			var count= domInput.value;//获取值
+			//总数
+			var total=(Number(data)+Number(count));
+			console.log(total)
+			if(total>=10){
+				layer.msg('达到限购', function(){
+				});
+				return;
+			}else{
+				var domInput = document.getElementById("input-num");//找到id是ipt的input节点
+				var icount= domInput.value;//获取值	
+				var kucun ='${p.leftover}';
+				if(parseInt(count)>=parseInt(kucun)){
+					layer.msg('库存不足', function(){
+
+					});
+
+					domInput.value=parseInt(kucun)-1;
+				}
+				var val=$("#input-num").val();
+				if(parseInt(val)<10 && parseInt(val)>0) {
+					val = parseInt(val) +1;
+					$("#input-num").val(val);
+				}else if(parseInt(val)>10){
+					input.val(10);
+				}else if(parseInt(val)<1){
+					input.val(1);
+				}else if(count>kucun){
+					layer.msg('请注意库存数量', function(){
+					});
+
+				}else{
+					layer.msg('每个商品单次最多购买十件', function(){
+					});
+				}
+			}
+		}
+	});
+}
+
+</script>
+</html>

@@ -1,0 +1,13 @@
+dubbo:
+  registry:
+    address: zookeeper://192.168.121.150:2181
+    
+  application: 
+    name: 
+      oneplus-cum
+server:
+  port: 8081
+fastdfs_ip: http://192.168.121.150/
+spring:
+  redis:
+    host: 192.168.121.150

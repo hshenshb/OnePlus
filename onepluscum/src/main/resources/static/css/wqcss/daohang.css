@@ -1,0 +1,79 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.main body, .main html {
+	font-size: 14px;
+	font-family: 'Microsoft Yahei', '微软雅黑', 'Simsun', '宋体', 'Arial',
+		sans-serif;
+}
+
+.main img {
+	border: 0;
+}
+
+.main a {
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+}
+
+.main ol, .main ul, .main li {
+	list-style: none;
+}
+
+.main .head-nav {
+	width: auto;
+	height: 50px;
+	background: #007130;
+}
+
+.main .head-nav-con {
+	width: 1200px;
+	height: 100px;
+	margin: auto;
+}
+
+.main .head-nav-con ul li {
+	width: 170px;
+	/*   float: left;  */
+	font-size: 20px;
+	text-align: center;
+}
+
+.main .head-nav-con ul {
+	display: flex;
+}
+
+.main .head-nav-con ul li:hover {
+	background: #ff9c01;
+}
+
+.main .head-nav-con ul a {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+}
+
+.main .head-nav-con .drop-down {
+	position: relative;
+}
+
+.main .head-nav-con .drop-down-content {
+	padding: 0;
+	display: none;
+	position: absolute;
+	z-index: 99999999999999;
+	background: #007130;
+}
+
+.main .head-nav-con .drop-down-content li:hover>a {
+	background-color: #ff9c01;
+}
+
+.main .head-nav-con .drop-down:hover .drop-down-content {
+	display: block;
+}

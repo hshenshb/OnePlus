@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjetc.mapper.AdminProductMapper">
+<select id="list" parameterType="string" resultType="com.tjetc.pojo.Product">
+    select p.*,sc.scname sname from product p ,secondcategory sc where pname like '%${value}%' and p.scid=sc.id
+
+</select>
+    <insert id="add" parameterType="com.tjetc.pojo.Product" >
+        insert into product(pname,price,cid,scid,ishot,photopath,photopath2,photopath3,discrip,leftover,preprice,ptime)
+         values (#{pname},#{price},#{cid},#{scid},#{ishot},#{photopath},#{photopath2},#{photopath3},#{discrip},#{leftover},#{preprice},#{ptime})
+    </insert>
+    <select id="getById" parameterType="int" resultType="com.tjetc.pojo.Product">
+    select p.*,sc.scname sname from product p ,secondcategory sc where p.id=#{value} and p.scid=sc.id
+
+</select>
+    <select id="getById1" parameterType="int" resultType="com.tjetc.pojo.Product">
+    select id,price from product  where id=#{value}
+
+</select>
+    <update id="update" parameterType="com.tjetc.pojo.Product">
+        update product set pname=#{pname},price=#{price},cid=#{cid},scid=#{scid},ishot=#{ishot},photopath=#{photopath},photopath2=#{photopath2},photopath3=#{photopath3},discrip=#{discrip},leftover=#{leftover},preprice=#{preprice} where id=#{id}
+
+    </update>
+    <delete id="delete" parameterType="int">
+    delete from  product where id=#{value}
+
+    </delete>
+
+
+</mapper>

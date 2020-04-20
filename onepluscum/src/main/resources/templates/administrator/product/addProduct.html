@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.validate.js}"></script>
+<script type="text/javascript" th:src="@{/js/iconfontadminadd.js}" ></script>
+ 
+<script type="text/javascript">
+/*<![CDATA[*/
+
+jQuery.validator.addMethod("minMethod", function(value, element) {
+	  
+    var mobile = /^\d+(\.\d+)?$/ ;
+    return this.optional(element) || (mobile.test(value));
+}, "输入有误");
+
+	$(function() {
+		$("#form").validate({
+			rules:{
+				pname:{
+					required:true,
+					 
+				},
+				price:{
+					required:true,
+					minMethod:true,
+					max:999999
+				},
+				discrip:{
+					required:true,
+				},
+				leftover:{
+					required:true,
+					minMethod:true,
+					max:999999
+				},
+				preprice:{
+					required:true,
+					minMethod:true,
+					max:999999
+				},
+				photopathh:{
+					required:true,
+				},
+				photopathh2:{
+					required:true,
+				},
+				photopathh3:{
+					required:true,
+				},
+				
+			
+			},
+			messages:{
+				price:{
+				
+					minMethod:"输入有误",
+					max:"数量过多"
+				},
+				leftover:{
+				
+					minMethod:"输入有误",
+					max:"数量过多"
+				},
+				preprice:{
+				
+					minMethod:"输入有误",
+					max:"数量过多"
+				},
+			
+			}
+		 
+			
+			
+		})
+	});
+	function fanhui() {
+		location.href="/AdminProductController/list";
+	}
+	/*]]>*/
+</script>
+<style type="text/css">
+ 	.iconadminadd {
+			  width: 4em;
+			  height: 4em;
+			  vertical-align: -0.15em;
+			  fill: currentColor;
+			  overflow: hidden;
+			}
+			.admin-add-ys{
+				border: 1px solid beige;
+				width: 800px;
+				margin:auto;
+				background-color: gainsboro;
+			}
+			.admin-add-fh{
+				background-color: orange;
+				color: white;
+				font-family: "微软雅黑";
+				font-weight: bold;
+				width: 105px;
+				height: 40px;
+				margin:auto;
+				border: 2px solid gainsboro;
+			}
+			.admin-add-tj:hover,
+			.admin-add-fh:hover{
+				color: gainsboro;
+				cursor: pointer;
+				background: orangered;
+			}
+			.addmin-add-radio{
+				cursor: pointer;
+			}
+			.smlzzzz{
+				text-align: center;
+			}
+ 	</style>
+</head>
+<body>
+<div class="admin-add-ys">
+	<form id="form" th:action="@{/AdminProductController/add}" method="post" enctype="multipart/form-data">
+		<div class="smlzzzz">
+			<p>
+				<svg class="iconadminadd" aria-hidden="true">
+					<use xlink:href="#icon-yijia"></use>
+				</svg>
+			</p>
+			<h1>添加商品</h1><br/>
+		</div>
+		<div style="margin-left:36%;">
+			<p>名称：<input type="text" name="pname" id="pname" /> </p>
+			<p>价格：<input type="text" name="price" id="price" /> </p>
+			<p>是否热卖：
+				<input type="radio" name="ishot" value="1" checked="checked" />是
+				<input type="radio" name="ishot" value="0" />否
+			</p>
+			<p>所属二级分类：
+				<select name="scid">
+						<option th:each="te:${list}" th:value="${te.id}" th:text="${te.scname}"></option>
+				</select>
+			</p>
+			<p>描述：<input type="text" name="discrip" id="discrip" /> </p>
+			<p>库存：<input type="text" name="leftover" id="leftover" /> </p>
+			<p>原价：<input type="text" name="preprice" id="preprice" /> </p>
+			<p>照片：<input type="file" name="photopathh" id="photopathh" />
+				<input type="file" name="photopathh2" id="photopathh2" />
+				<input type="file" name="photopathh3" id="photopathh3" />
+			</p>
+		</div>
+		<div class="smlzzzz">
+			<p><input class="admin-add-fh" type="submit" value="提交" />
+				<button class="admin-add-fh" onclick="fanhui()">返回</button> </p>
+		</div>
+	</form>
+</div>
+</body>
+</html>

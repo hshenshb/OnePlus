@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjetc.mapper.AdminUserMapper">
+    <select id="getAll" parameterType="string" resultType="com.tjetc.pojo.User">
+        select * from users where username like '%${value}%'
+    </select>
+    <select id="validnameAdd" parameterType="string" resultType="com.tjetc.pojo.User">
+        select * from users where username = #{value}
+    </select>
+    <insert id="add">
+        insert into users(username,password,uname,email,phone,addr,state) values (#{username},#{password},#{uname},#{email},#{phone},#{addr},#{state})
+    </insert>
+    <select id="getById" parameterType="int" resultType="com.tjetc.pojo.User">
+        select * from users where id = #{value}
+    </select>
+    <update id="update" parameterType="com.tjetc.pojo.User">
+        update users set username=#{username},password=#{password},uname=#{uname},email=#{email},phone=#{phone},addr=#{addr},state=#{state} where id=#{id}
+    </update>
+    <delete id="delete" parameterType="int">
+        delete from users where id=#{value}
+    </delete>
+    <select id="getByName" parameterType="string" resultType="com.tjetc.pojo.User">
+        select * from users where username = #{value}
+    </select>
+    <select id="getByUName" parameterType="string" resultType="com.tjetc.pojo.User">
+        select * from users where username = #{value}
+    </select>
+
+
+
+
+
+</mapper>

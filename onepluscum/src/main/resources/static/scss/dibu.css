@@ -1,0 +1,28 @@
+	.one-button.btn-black-online {
+    	border-color: #10181F;
+    	background-color: white;
+    	color: #101920;
+    	font-weight: bolder;
+    }
+    .one-button.btn-black-online:before {
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	top: -1px;
+    	left: -1px;
+    	z-index: -1;
+    	width: 0;
+    	height: 101%;
+    	transition: 0.25s;
+    	background-color: #101920;
+    	border-radius: 3px;
+    }
+    
+    .one-button.btn-black-online:hover:before {
+    	background-color: black;
+    	width: 101%;
+    }
+    .one-tel-time.service-available,
+    .nav-trigger.collapsed{
+    	font-weight: bolder;
+    }

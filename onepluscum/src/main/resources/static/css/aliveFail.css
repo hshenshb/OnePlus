@@ -1,0 +1,122 @@
+	.successPay_icon {
+			width: 10em;
+			height: 10em;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+			margin: auto;
+		}
+		
+		.paySucess {
+			width: 1200px;
+			height: 550px;
+			background-color: white;
+			margin: auto;
+			margin-top: 30px;
+			display: block;
+		}
+		
+		.paySucess_top {
+			width: 1000px;
+			margin: auto;
+			height: 100px;
+			/*background-color: greenyellow;*/
+			margin-left: auto;
+			display: block;
+			text-align: center;
+		}
+		
+		.s_font {
+			height: 80px;
+			line-height: 80px;
+			/*background-color: #00FFFF;*/
+			font-size: 20px;
+		}
+		
+		.paySucess_msg {
+			width: 1000px;
+			margin: auto;
+			/*background-color: #0086B3;*/
+			margin-top: 150px;
+			font-size: 14px;
+			padding: 10px 10px 10px;
+			text-align: center;
+		}
+		
+		.paySucess_btn {
+			text-align: center;
+			margin: auto;
+			/*background-color: royalblue;*/
+			width: 400px;
+			margin-top: 70px;
+		}
+		
+		.button_jixu {
+			border-radius: 8px;
+			background-color: #4CAF50;
+			/* Green */
+			/*border: none;*/
+			color: white;
+			/*padding: 10px 32px;*/
+			height: 54px;
+			width: 200px;
+			text-align: center;
+			/*text-decoration: none;*/
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+			background-color: white;
+			color: black;
+			border: 1px solid #555555;
+		}
+		
+		.button_jixu:hover {
+			background-color: #555555;
+			color: white;
+		}
+		
+		.button_jiesuan {
+			border-radius: 8px;
+			background-color: #EB0028;
+			/* Green */
+			/*border: none;*/
+			color: white;
+			/*padding: 10px 32px;*/
+			height: 54px;
+			width: 200px;
+			text-align: center;
+			/*text-decoration: none;*/
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			-webkit-transition-duration: 0.4s;
+			/* Safari */
+			transition-duration: 0.4s;
+			cursor: pointer;
+			border: 0px solid #555555;
+		}
+		
+		.button_jiesuan:hover {
+			background-color: #b8001f;
+			color: white;
+		}
+		
+		.total_btn {
+			margin-top: 30px;
+		}
+		.tip1{
+		font-size: 20px;
+		margin-top: -30px;
+	}
+	.tip2{
+		font-size: 18px;
+		color: #828282;
+		margin-top: 20px;
+	}
+	#money{
+		color: red;
+	}

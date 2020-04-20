@@ -1,0 +1,1579 @@
+    .footer-tail-cn .row {
+    	height: auto;
+    }
+    
+    .flex,
+    .design-canvas>.section-row {
+    	display: flex;
+    }
+    
+    .design-canvas {
+    	flex-direction: column;
+    }
+    
+    .design-canvas>.section-row {
+    	width: 100%;
+    	box-sizing: border-box;
+    	position: relative;
+    }
+    
+    .design-canvas .section-row .sections {
+    	width: 100%;
+    	display: flex;
+    }
+    
+    .section-row .sections .section-container {
+    	position: relative;
+    	height: 100%;
+    }
+    
+    .footer-kf .weixin {
+    	position: relative;
+    	margin-top: 20px;
+    	text-align: center;
+    }
+    
+    .footer-kf .weixin a {
+    	display: inline-block;
+    	margin-left: 10px;
+    	transform: translateY(5px);
+    }
+    
+    .footer-kf .weixin a:hover .QR-Code {
+    	opacity: 1;
+    }
+    
+    .footer-kf .weixin a:hover .weixin-img {
+    	opacity: 0.8;
+    }
+    
+    .footer-kf .weixin .QR-Code {
+    	position: absolute;
+    	bottom: 25px;
+    	transform: translateX(-50%);
+    	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    	opacity: 0;
+    }
+    /*在线客服按钮*/
+    
+    .one-button.btn-black-online {
+    	border-color: #101920;
+    	background-color: white;
+    	color: #101920;
+    }
+    
+    .one-button.btn-black-online:before {
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	top: 0px;
+    	left: 0px;
+    	z-index: -1;
+    	width: 0;
+    	height: 100%;
+    	height: calc(100%+ 2px);
+    	transition: 0.25s;
+    	background-color: #101920;
+    	border-radius: 2px;
+    }
+    
+    .one-button.btn-black-online:hover:before {
+    	background-color: black;
+    	width: 100%;
+    	width: calc(100%+ 2px);
+    }
+    
+    @media screen and (max-width: 735px) {
+    	#footer .contact-us .link {
+    		padding: 0 20%;
+    	}
+    	#footer .contact-us .link ul li:nth-child(3) {
+    		border-right: 0;
+    	}
+    }
+    
+    .nav-bread {
+    	width: 100%;
+    	display: flex;
+    	width: 100%;
+    	display: flex;
+    	padding: 16px 20px 0;
+    	color: #000;
+    }
+    
+    .home {
+    	display: inline-block;
+    	height: 25px;
+    	margin-right: 12px;
+    }
+    
+    .home a {
+    	text-decoration: none;
+    	color: #000;
+    }
+    
+    .bread-link {
+    	color: #000;
+    }
+    
+    .bread-ol {
+    	display: flex;
+    	flex-wrap: wrap;
+    	padding: 0;
+    	margin: 0;
+    	list-style: none;
+    }
+    
+    .bread-ol li span {
+    	display: inline-block;
+    	margin: 0 12px;
+    }
+    
+    .bread-ol li a {
+    	color: #000
+    }
+    
+    .bread-ol li:before {
+    	content: '';
+    	width: 15px;
+    	height: 20px;
+    	background-size: 8px 18px;
+    	display: inline-block;
+    	vertical-align: sub;
+    	background: url("https://image01.oneplus.cn/shop/201903/26/1591/5c27720e66ff7447e055c6f86f8907b5.svg") center no-repeat;
+    }
+    
+    @media screen and (max-width: 768px) {
+    	.nav-bread {
+    		width: 100%;
+    		display: flex;
+    		width: 100%;
+    		display: flex;
+    		padding: 16px 20px;
+    		color: #000;
+    	}
+    }
+    
+    #header .icon>a.search-everything {
+    	color: #000;
+    }
+    
+    #footer .footer-nav .trade-in-mo {
+    	display: none;
+    }
+    
+    @media screen and (max-width: 1024px) {
+    	#footer .footer-nav .trade-in-pc {
+    		display: none;
+    	}
+    	#footer .footer-nav .trade-in-mo {
+    		display: block;
+    	}
+    }
+    /*第二个    -Shot on OnePlus图片格式（最下方图片）*/
+    
+   #op-content .odop {
+    	position: relative;
+    	margin-bottom: 10px;
+    }
+    
+    #op-content .odop .odop-text {
+    	position: absolute;
+    	top: 50%;
+    	width: 100%;
+    	margin-top: -70px;
+    	text-align: center
+    }
+    
+    #op-content .odop .odop-text .h3 {
+    	font-size: 48px
+    }
+    
+    #op-content .odop .odop-text .h4 {
+    	font-size: 24px;
+    	margin: 20px 0 40px
+    }
+    
+    #op-content .odop .odop-text .opod-btn {
+    	display: inline-block;
+    	width: 130px;
+    	height: 40px;
+    	line-height: 40px;
+    	text-align: center;
+    	cursor: pointer;
+    	font-size: 14px;
+    	background: 0 0;
+    	color: #fff;
+    	border: 1px solid #fff;
+    	-moz-border-radius: 0;
+    	-webkit-border-radius: 0;
+    	border-radius: 0;
+    	-moz-transition: color .15s ease 0s;
+    	-o-transition: color .15s ease 0s;
+    	-webkit-transition: color .15s ease;
+    	-webkit-transition-delay: 0s;
+    	transition: color .15s ease 0s;
+    	position: relative;
+    	z-index: 1;
+    	border-width: 2px
+    }
+    
+    @media screen and (min-width: 1025px) {
+    	#op-content .odop .odop-text .opod-btn:before {
+    		position: absolute;
+    		top: -1px;
+    		left: -1px;
+    		width: 0;
+    		height: 42px;
+    		background: #fff;
+    		-moz-border-radius: 0;
+    		-webkit-border-radius: 0;
+    		border-radius: 0;
+    		content: "";
+    		-moz-transition: width .15s ease 0s;
+    		-o-transition: width .15s ease 0s;
+    		-webkit-transition: width .15s ease;
+    		-webkit-transition-delay: 0s;
+    		transition: width .15s ease 0s;
+    		z-index: -1
+    	}
+    	#op-content .odop .odop-text .opod-btn:hover {
+    		color: #000
+    	}
+    	#op-content .odop .odop-text .opod-btn:hover:before {
+    		width: 132px
+    	}
+    }
+    
+    @media screen and (max-width: 767px) {
+    	#op-content .odop .odop-text {
+    		margin-top: -35px
+    	}
+    	#op-content .odop .odop-text .h3 {
+    		font-size: 26px
+    	}
+    	#op-content .odop .odop-text .h4 {
+    		font-size: 14px;
+    		margin: 10px 0 14px
+    	}
+    	#op-content .odop .odop-text .opod-btn {
+    		display: inline-block;
+    		width: 70px;
+    		height: 24px;
+    		line-height: 24px;
+    		text-align: center;
+    		cursor: pointer;
+    		font-size: 12px;
+    		background: 0 0;
+    		color: #fff;
+    		border: 1px solid #fff;
+    		-moz-border-radius: 0;
+    		-webkit-border-radius: 0;
+    		border-radius: 0;
+    		-moz-transition: color .15s ease 0s;
+    		-o-transition: color .15s ease 0s;
+    		-webkit-transition: color .15s ease;
+    		-webkit-transition-delay: 0s;
+    		transition: color .15s ease 0s;
+    		position: relative;
+    		z-index: 1;
+    		border-width: 2px
+    	}
+    }
+    
+    @media screen and (max-width: 767px)and (min-width:1025px) {
+    	#op-content .odop .odop-text .opod-btn:before {
+    		position: absolute;
+    		top: -1px;
+    		left: -1px;
+    		width: 0;
+    		height: 26px;
+    		background: #fff;
+    		-moz-border-radius: 0;
+    		-webkit-border-radius: 0;
+    		border-radius: 0;
+    		content: "";
+    		-moz-transition: width .15s ease 0s;
+    		-o-transition: width .15s ease 0s;
+    		-webkit-transition: width .15s ease;
+    		-webkit-transition-delay: 0s;
+    		transition: width .15s ease 0s;
+    		z-index: -1
+    	}
+    	#op-content .odop .odop-text .opod-btn:hover {
+    		color: #000
+    	}
+    	#op-content .odop .odop-text .opod-btn:hover:before {
+    		width: 72px
+    	}
+    }
+    
+    .part3 .img-box {
+    	height: 37.5vw;
+    	background: url(https://image01.oneplus.cn/shop/201812/19/1522/d8e2d4962c563459898a195a226bb1d6.jpg) no-repeat center;
+    	background-size: cover;
+    }
+    
+    @media screen and (max-width: 1024px) {
+    	.part3 .img-box {
+    		height: 50vw;
+    		background-image: url(https://image01.oneplus.cn/shop/201812/19/311/a547300119e4681d3af2a8b3991136d9.jpg);
+    	}
+    }
+    
+    @media screen and (max-width: 767px) {
+    	#op-content .odop .odop-text .h3 {
+    		font-weight: 300;
+    	}
+    }
+    /*第三个*/
+    
+    .i-icon-15d,
+    .i-icon-1h,
+    .i-icon-30d,
+    .i-icon-7d {
+    	display: inline-block;
+    	background-repeat: no-repeat
+    }
+    
+    .bottom-promos .tit-desc-panel h4 {
+    	font-weight: 400;
+    	line-height: 34px;
+    	font-size: 18px
+    }
+    
+    .bottom-promos .tit-desc-panel p {
+    	font-size: 14px;
+    	line-height: 1.5;
+    	white-space: normal
+    }
+    
+    .i-icon-1h {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/regular-s42e01bdeba.png);
+    	background-position: 0 -70px;
+    	height: 70px;
+    	width: 70px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.i-icon-1h {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/retina-s98853356f7.png);
+    		background-position: 0 -58px;
+    		height: 58px;
+    		width: 58px;
+    		-moz-background-size: 58px auto;
+    		-o-background-size: 58px auto;
+    		-webkit-background-size: 58px auto;
+    		background-size: 58px auto
+    	}
+    }
+    
+    .i-icon-7d {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/regular-s42e01bdeba.png);
+    	background-position: 0 -210px;
+    	height: 70px;
+    	width: 70px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.i-icon-7d {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/retina-s98853356f7.png);
+    		background-position: 0 -173px;
+    		height: 58px;
+    		width: 58px;
+    		-moz-background-size: 58px auto;
+    		-o-background-size: 58px auto;
+    		-webkit-background-size: 58px auto;
+    		background-size: 58px auto
+    	}
+    }
+    
+    .i-icon-15d {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/regular-s42e01bdeba.png);
+    	background-position: 0 0;
+    	height: 70px;
+    	width: 70px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.i-icon-15d {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/retina-s98853356f7.png);
+    		background-position: 0 0;
+    		height: 58px;
+    		width: 58px;
+    		-moz-background-size: 58px auto;
+    		-o-background-size: 58px auto;
+    		-webkit-background-size: 58px auto;
+    		background-size: 58px auto
+    	}
+    }
+    
+    .i-icon-30d {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/regular-s42e01bdeba.png);
+    	background-position: 0 -140px;
+    	height: 70px;
+    	width: 70px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.i-icon-30d {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIconsInWhite/retina-s98853356f7.png);
+    		background-position: 0 -115px;
+    		height: 58px;
+    		width: 58px;
+    		-moz-background-size: 58px auto;
+    		-o-background-size: 58px auto;
+    		-webkit-background-size: 58px auto;
+    		background-size: 58px auto
+    	}
+    }
+    
+    .services {
+    	padding: 110px 0 130px;
+    	background: #8fc28e;
+    	color: #fff
+    }
+    
+    .services .tit {
+    	font-size: 20px;
+    	font-size: 2rem;
+    	margin-bottom: 10px;
+    	line-height: 2
+    }
+    
+    .services .services-l {
+    	width: 26.66667%;
+    	line-height: 30px;
+    	font-size: 16px;
+    	font-size: 1.6rem;
+    	float: left
+    }
+    
+    .services .services-r {
+    	float: right;
+    	width: 73.33333%
+    }
+    
+    .services .services-r li {
+    	float: right;
+    	display: inline-block;
+    	line-height: 40px;
+    	font-size: 14px;
+    	text-align: center;
+    	margin-right: 8%
+    }
+    
+    .services .services-r li.service-30d {
+    	margin-right: 0
+    }
+    
+    .ft-service {
+    	background: #fff
+    }
+    
+    .ft-service .service-wrap {
+    	width: 100%;
+    	max-width: 1200px;
+    	margin: auto
+    }
+    
+    @media screen and (max-width: 1280px) {
+    	.ft-service .service-wrap {
+    		width: 93.75%
+    	}
+    }
+    
+    @media screen and (max-width: 767px) {
+    	.ft-service .service-wrap {
+    		width: auto;
+    		margin: auto 20px
+    	}
+    }
+    
+    .ft-service .i-15d-return,
+    .ft-service .i-30d-swap,
+    .ft-service .i-7d-return,
+    .ft-service .i-7s-return,
+    .ft-service .i-free-send {
+    	display: inline-block;
+    	background-repeat: no-repeat;
+    	height: 80px;
+    	width: 80px
+    }
+    
+    @media screen and (max-width: 400px) {
+    	.ft-service .service-wrap {
+    		margin: auto 12px
+    	}
+    }
+    
+    .ft-service .i-7d-return {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 -400px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-7d-return {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 -280px;
+    		height: 80px;
+    		width: 80px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service .i-15d-return {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 0
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-15d-return {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 0;
+    		height: 80px;
+    		width: 80px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service .i-30d-swap {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 -240px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-30d-swap {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 -160px;
+    		height: 80px;
+    		width: 80px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service .i-free-send {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 -560px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-free-send {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 -400px;
+    		height: 80px;
+    		width: 80px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service .i-7s-return {
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 -480px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-7s-return {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 -360px;
+    		height: 40px;
+    		width: 40px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service .i-15s-return {
+    	display: inline-block;
+    	background-repeat: no-repeat;
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 -80px;
+    	height: 80px;
+    	width: 80px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-15s-return {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 -80px;
+    		height: 40px;
+    		width: 40px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service .i-30s-swap {
+    	display: inline-block;
+    	background-repeat: no-repeat;
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 -320px;
+    	height: 80px;
+    	width: 80px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-30s-swap {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 -240px;
+    		height: 40px;
+    		width: 40px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service .i-1h-send {
+    	display: inline-block;
+    	background-repeat: no-repeat;
+    	background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons-sd81bbaa639.png);
+    	background-position: 0 -160px;
+    	height: 80px;
+    	width: 80px
+    }
+    
+    @media (min--moz-device-pixel-ratio:1.3)and (max-width: 767px),
+    (-o-min-device-pixel-ratio:2.6 / 2)and (max-width:767px),
+    (-webkit-min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-device-pixel-ratio:1.3)and (max-width:767px),
+    (min-resolution:1.3dppx)and (max-width:767px) {
+    	.ft-service .i-1h-send {
+    		background-image: url(https://statics.oneplus.cn/v2/img/common/serviceIcons@2x-sa9f58b327e.png);
+    		background-position: 0 -120px;
+    		height: 40px;
+    		width: 40px;
+    		-moz-background-size: 80px auto;
+    		-o-background-size: 80px auto;
+    		-webkit-background-size: 80px auto;
+    		background-size: 80px auto
+    	}
+    }
+    
+    .ft-service li {
+    	width: 25%;
+    	float: left;
+    	text-align: center;
+    	padding: 35px 0;
+    	font-size: 16px
+    }
+    
+    @media screen and (max-width: 1024px) {
+    	.ft-service li {
+    		font-size: 14px
+    	}
+    }
+    
+    @media screen and (max-width: 550px) {
+    	.ft-service li {
+    		width: 50%;
+    		padding: 30px 0
+    	}
+    	.ft-service li:nth-child(3),
+    	.ft-service li:nth-child(4) {
+    		padding-top: 0
+    	}
+    }
+    
+    .ft-service li a {
+    	display: block;
+    	color: #565b62
+    }
+    
+    .ft-service li span {
+    	display: block;
+    	padding-top: 15px
+    }
+    
+    @media screen and (max-width: 1200px) {
+    	.top-recommend li h4 {
+    		font-size: 20px
+    	}
+    	.bottom-promos .inner,
+    	.services .inner {
+    		padding: 0 20px
+    	}
+    	.bottom-promos .tit-desc-panel {
+    		min-height: 110px
+    	}
+    	.bottom-promos .tit-desc-panel h4 {
+    		font-size: 16px
+    	}
+    	.bottom-promos .tit-desc-panel p {
+    		font-size: 12px
+    	}
+    	#op-footer .ii-online,
+    	.op-footer-locale {
+    		margin-right: 20px
+    	}
+    	#op-footer .op-footer-phone a {
+    		font-size: 3.3rem
+    	}
+    	#op-footer .linehot {
+    		min-width: 160px
+    	}
+    }
+    
+    @media screen and (max-width: 1000px) {
+    	.services .services-r li {
+    		margin-right: 8%
+    	}
+    }
+    
+    @media screen and (max-width: 767px) {
+    	.top-recommend li {
+    		width: 100%
+    	}
+    	.top-recommend li h4 {
+    		font-size: 20px
+    	}
+    	.bottom-promos ul {
+    		white-space: normal
+    	}
+    	.bottom-promos li {
+    		width: 90%;
+    		display: block;
+    		margin: 0 auto 20px
+    	}
+    	.services .services-l,
+    	.services .services-r {
+    		float: none;
+    		width: 100%;
+    		font-size: 12px
+    	}
+    	.services {
+    		padding: 0
+    	}
+    	.services .tit {
+    		font-size: 14px;
+    		color: #fff;
+    		padding: 22px 0 15px
+    	}
+    	.services .services-r {
+    		margin: 30px 0 15px;
+    		white-space: normal
+    	}
+    	.services .services-r li {
+    		width: 50%;
+    		float: left;
+    		margin-bottom: 30px;
+    		margin-right: 0
+    	}
+    	.op-top-menu .op-top-menu-lia i {
+    		display: none
+    	}
+    }
+    
+    .op-footer-link {
+    	border-bottom: 1px solid #f1f1f1;
+    	border-top: 1px solid #f1f1f1
+    }
+    
+    .ft-service {
+    	border-top: 1px solid #e4e4e4;
+    }
+    /*第四个*/
+    
+    .bottom-promos {
+    	background-color: #f6f6f6;
+    	padding: 5.98958% 0;
+    	
+    }
+    
+    .bottom-promos .inner {
+    	max-width: 1200px;
+    	margin: 0 auto;
+    	box-sizing: border-box;
+    }
+    
+    .bottom-promos ul {
+    	white-space: nowrap;
+    	display: flex;
+    }
+    
+    .bottom-promos li {
+    	margin-right: 60px;
+    	vertical-align: middle;
+    }
+    
+    .bottom-promos li:last-child {
+    	margin-right: 0;
+    }
+    
+    .bottom-promos li> a {
+    	display: block;
+    }
+    
+    .bottom-promos li img {
+    	width: 100%;
+    }
+    
+    .bottom-promos .tit-desc-panel h4 {
+    	font-family: SlateForOnePlusRegular, "Microsoft Yahei";
+    	font-size: 16px;
+    	line-height: 1.5;
+    	margin-top: 20px;
+    	color: #000;
+    	opacity: 0.6;
+    }
+    
+    .bottom-promos .tit-desc-panel p {
+    	font-family: SlateForOnePlusRegular, "Microsoft Yahei";
+    	font-size: 18px;
+    	line-height: 1.5;
+    	font-weight: normal;
+    	color: #000;
+    	white-space: normal;
+    	margin-top: 5px;
+    }
+    
+    .bottom-promos .tit-desc-panel .bottom-learn-more {
+    	font-family: SlateForOnePlusRegular, "Microsoft Yahei";
+    	font-size: 16px;
+    	line-height: 1.5;
+    	margin-top: 20px;
+    	color: #09c !important;
+    	text-decoration: none;
+    	display: block;
+    }
+    
+    @media screen and (max-width: 1000px) {
+    	.bottom-promos ul {
+    		flex-direction: column;
+    	}
+    	.bottom-promos li {
+    		margin: 0 20px 50px 20px;
+    		width: auto;
+    	}
+    	.bottom-promos li:last-child {
+    		margin-right: 30px;
+    	}
+    }*/
+   
+/*第五个*/
+      :lang(cn), :lang(cn) * {
+         box-sizing: border-box;
+      }
+       .op-home-promo{
+          position: relative;
+        }
+        .op-home-promo .home-promo-group{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          width: 100%;
+          justify-content: center;
+          margin-bottom:0;
+          padding: 0 5px;
+        }
+        .op-home-promo .promo-item{
+          position: relative;
+          display: list-item;
+          width: 50%;
+          max-width: 1270px;
+          height: 500px;
+          box-sizing: border-box;
+          margin-bottom: 10px;
+          padding: 0 5px;
+        }
+
+        .op-home-promo .promo-item .item-link{
+          position: relative;
+          display: block;
+          height: 100%;
+        }
+
+        .op-home-promo .promo-item-bg{
+          overflow: hidden;
+          background: center center no-repeat;
+          height: 100%;
+          background-size: cover;
+        }
+
+        .op-home-promo .item-link:hover .promo-item-bg{
+          transition: .25s;
+          opacity: 0.9;
+        }
+
+        .op-home-promo .promo-item-text{
+          position: absolute;
+          width: 100%;
+          text-align: center;
+          color: #000000;
+          top: 30px;
+        }
+
+        .op-home-promo .text-content{
+          width: 100%;
+          max-width: 540px;
+          margin: auto;
+        }
+
+        .op-home-promo .promo-item-text.white{
+          color: #ffffff;
+        }
+        .op-home-promo .promo-item-text.black{
+          color: #000000;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 737px){
+          .op-home-promo .text-content{
+            width: 80%;
+          }
+          .op-home-promo .promo-item{
+            height: 350px;
+          }
+        }
+        @media screen and (max-width: 736px) {
+          .op-home-promo .promo-item{
+            display: block;
+            width: 100%;
+            padding: 0px;
+          }
+          .op-home-promo .text-content{
+            width: 100%;
+            padding: 0 30px;
+          }
+          .op-home-promo .promo-item-text{
+            top:30px;
+          }
+          .op-home-promo .home-promo-group{
+            padding:0;
+          }
+        }
+
+
+
+
+     body .op-home-promo .promo-item .item-link-mo {
+       display: none;
+     }
+     @media screen and (max-width: 1024px){ 
+          body .op-home-promo .promo-item .item-link {
+             display: none;
+          }
+           body .op-home-promo .promo-item .item-link-mo {
+             display: block;
+          }
+     }
+     
+<!--图片异步加载-->
+  .lazyload{
+    opacity: 0;
+  }
+  .lazyload.op-loaded{
+    opacity: 1;
+  }
+  
+/*后面加的*/
+      :lang(cn), :lang(cn) * {
+         box-sizing: border-box;
+      }
+       .refurbish .op-narrow-banner .one-button:hover, .refurbish .op-narrow-banner .one-button:focus, .refurbish .op-narrow-banner .one-button.focus{
+          box-shadow:none;
+        }
+        #op-narrow-banner{
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .op-narrow-banner .link{
+           color:#000
+        }
+       .op-narrow-banner .link:hover{
+           color:#000
+        }
+        .op-narrow-banner p{
+          margin: 0;
+        }
+        .op-narrow-banner .narrow-banner{
+          position: relative;
+          width: 100%;
+          order: 1;
+        }
+        .op-narrow-banner > div {
+          margin-bottom: 10px;
+        }
+
+        /*字体规范化 start*/
+        .op-narrow-banner .font-headline-3{
+          font-family: MYingHei W7,SlateForOnePlusMedium,Microsoft Yahei,sans-serif;
+          font-weight:bold;
+        }
+        .op-narrow-banner{
+          font-family: MYingHei W5,SlateForOnePlusRegular,Microsoft Yahei,sans-serif;
+        }
+        .op-narrow-banner .font-headline-3{
+          font-size: 48px;
+          line-height: 1.2;
+        }
+        .op-narrow-banner .font-title{
+          font-size: 24px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-subheading{
+          font-size: 20px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-subtitle{
+          font-size: 18px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-body-2{
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-body-1{
+          font-size: 14px;
+          line-height: 1.7;
+        }
+        .op-narrow-banner .font-descriptions{
+          font-size: 12px;
+          line-height: 1.7;
+        }
+        @media screen and (max-width: 1599px) and (min-width: 736px){
+          .op-narrow-banner .font-headline-3{
+            font-size: 34px;
+            line-height: 1.2;
+          }
+          .op-narrow-banner .font-title{
+            font-size: 20px;
+            line-height: 1.5;
+          }
+          .op-narrow-banner .font-subheading{
+            font-size: 18px;
+            line-height: 1.5;
+          }
+          .op-narrow-banner .font-subtitle{
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
+
+        @media screen and (max-width: 735px){
+          .op-narrow-banner .font-headline-3{
+            font-size: 28px;
+            line-height: 1.2;
+          }
+        }
+        /*字体规范化 end*/
+
+        /*图片响应式 start*/
+        .op-narrow-banner .banner-column-bg{
+          overflow: hidden;
+          background: center center no-repeat;
+          height: 680px;
+        }
+        @media screen and (max-width: 1600px) and (min-width: 1201px){
+          /*.op-narrow-banner .banner-column-bg{*/
+            /*padding-bottom: 26.6%;*/
+            /*height: auto;*/
+            /*background-size: cover;*/
+          /*}*/
+        }
+        @media screen and (max-width: 1200px) and (min-width: 737px){
+          .op-narrow-banner .banner-column-bg{
+            overflow: hidden;
+            background: center center no-repeat;
+            height: 450px;
+            background-size: cover;
+          }
+        }
+        @media screen and (max-width: 736px) {
+          .op-narrow-banner .banner-column-bg {
+            overflow: hidden;
+            background: center center no-repeat;
+            height: 600px;
+            background-size: cover;
+          }
+        }
+        /*图片响应式 end*/
+
+        /*文案响应式 start*/
+        .op-narrow-banner .banner-column-text {
+          width: 100%;
+          position: absolute;
+          height: 100%;
+          text-align: left;
+          color: #000000;
+          max-width: 1000px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .op-narrow-banner .text-content {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          max-width: 500px;
+        }
+        .op-narrow-banner .detail{
+          margin-top: 10px;
+        }
+        .op-narrow-banner .price{
+          margin-top: 0px;
+        }
+        .op-narrow-banner .banner-button-box{
+          margin-top: 40px;
+
+        }
+        .op-narrow-banner .link-button{
+          margin-top: 10px;
+        }
+        .op-narrow-banner .info{
+          margin-top: 10px;
+        }
+        .op-narrow-banner .one-button{
+          height: 50px;
+          font-size: 16px;
+          line-height: 50px;
+          cursor: pointer;
+        }
+        .op-narrow-banner .link:hover{
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 737px){
+          .banner-column-text{
+            padding: 0 100px;
+          }
+          .op-narrow-banner .text-content {
+            max-width: 400px;
+          }
+
+          .op-narrow-banner .price{
+            margin-top: 0px;
+          }
+          .op-narrow-banner .banner-button-box{
+            margin-top: 30px;
+          }
+        }
+
+        @media screen and (max-width: 735px){
+          .op-narrow-banner .text-content {
+            width: 100%;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 30px;
+          }
+          .op-narrow-banner .text-content.bottom {
+             top: auto;
+             bottom: 30px;
+           }
+          .op-narrow-banner .banner-column-text {
+            text-align: center;
+          }
+          .op-narrow-banner .one-button{
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+          }
+          .op-narrow-banner .detail{
+            margin-top: 0px;
+          }
+          .op-narrow-banner .price{
+            margin-top: 0px;
+          }
+          .op-narrow-banner .banner-button-box{
+            margin-top: 20px;
+          }
+          .op-narrow-banner .link-button{
+            margin-top: 10px;
+          }
+          .op-narrow-banner .link{
+            font-size: 14px;
+          }
+          .op-narrow-banner .info{
+            margin-top: 10px;
+          }
+        }
+        /*文案响应式 end*/
+
+        .abs-layer{
+          position: absolute;
+          max-width: 500px;
+          width: 100%;
+          bottom: 6%;
+        }
+
+        @media screen and (max-width: 1200px) and (min-width: 737px){
+          .abs-layer {
+            max-width: 400px;
+            bottom: 50px;
+          }
+        }
+
+        @media screen and (max-width: 736px){
+          .abs-layer{
+            width: 80%;
+            left:50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+          }
+        }
+   .op-narrow-banner .narrow-banner-0{
+        position: relative;
+        width: 100%;
+        order: 2;
+    }
+   .op-narrow-banner .narrow-banner-0 .banner-column-text{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-0 .banner-column-text .link{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-0 .banner-column-text .link:hover, .op-narrow-banner .narrow-banner-0 .banner-column-text .link:active, .op-narrow-banner .narrow-banner-0 .banner-column-text .link:focus{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-1{
+        position: relative;
+        width: 100%;
+        order: 1;
+    }
+   .op-narrow-banner .narrow-banner-1 .banner-column-text{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-1 .banner-column-text .link{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-1 .banner-column-text .link:hover, .op-narrow-banner .narrow-banner-1 .banner-column-text .link:active, .op-narrow-banner .narrow-banner-1 .banner-column-text .link:focus{
+       color:white
+   }
+   /*可能是前两张图片的css（---）*/
+ 
+      :lang(cn), :lang(cn) * {
+         box-sizing: border-box;
+      }
+       .refurbish .op-narrow-banner .one-button:hover, .refurbish .op-narrow-banner .one-button:focus, .refurbish .op-narrow-banner .one-button.focus{
+          box-shadow:none;
+        }
+        #op-narrow-banner{
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .op-narrow-banner .link{
+           color:#000
+        }
+       .op-narrow-banner .link:hover{
+           color:#000
+        }
+        .op-narrow-banner p{
+          margin: 0;
+        }
+        .op-narrow-banner .narrow-banner{
+          position: relative;
+          width: 100%;
+          order: 1;
+        }
+        .op-narrow-banner > div {
+          margin-bottom: 10px;
+        }
+
+        /*字体规范化 start*/
+        .op-narrow-banner .font-headline-3{
+          font-family: MYingHei W7,SlateForOnePlusMedium,Microsoft Yahei,sans-serif;
+          font-weight:bold;
+        }
+        .op-narrow-banner{
+          font-family: MYingHei W5,SlateForOnePlusRegular,Microsoft Yahei,sans-serif;
+        }
+        .op-narrow-banner .font-headline-3{
+          font-size: 48px;
+          line-height: 1.2;
+        }
+        .op-narrow-banner .font-title{
+          font-size: 24px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-subheading{
+          font-size: 20px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-subtitle{
+          font-size: 18px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-body-2{
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        .op-narrow-banner .font-body-1{
+          font-size: 14px;
+          line-height: 1.7;
+        }
+        .op-narrow-banner .font-descriptions{
+          font-size: 12px;
+          line-height: 1.7;
+        }
+        @media screen and (max-width: 1599px) and (min-width: 736px){
+          .op-narrow-banner .font-headline-3{
+            font-size: 34px;
+            line-height: 1.2;
+          }
+          .op-narrow-banner .font-title{
+            font-size: 20px;
+            line-height: 1.5;
+          }
+          .op-narrow-banner .font-subheading{
+            font-size: 18px;
+            line-height: 1.5;
+          }
+          .op-narrow-banner .font-subtitle{
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
+
+        @media screen and (max-width: 735px){
+          .op-narrow-banner .font-headline-3{
+            font-size: 28px;
+            line-height: 1.2;
+          }
+        }
+        /*字体规范化 end*/
+
+        /*图片响应式 start*/
+        .op-narrow-banner .banner-column-bg{
+          overflow: hidden;
+          background: center center no-repeat;
+          height: 680px;
+        }
+        @media screen and (max-width: 1600px) and (min-width: 1201px){
+          /*.op-narrow-banner .banner-column-bg{*/
+            /*padding-bottom: 26.6%;*/
+            /*height: auto;*/
+            /*background-size: cover;*/
+          /*}*/
+        }
+        @media screen and (max-width: 1200px) and (min-width: 737px){
+          .op-narrow-banner .banner-column-bg{
+            overflow: hidden;
+            background: center center no-repeat;
+            height: 450px;
+            background-size: cover;
+          }
+        }
+        @media screen and (max-width: 736px) {
+          .op-narrow-banner .banner-column-bg {
+            overflow: hidden;
+            background: center center no-repeat;
+            height: 600px;
+            background-size: cover;
+          }
+        }
+        /*图片响应式 end*/
+
+        /*文案响应式 start*/
+        .op-narrow-banner .banner-column-text {
+          width: 100%;
+          position: absolute;
+          height: 100%;
+          text-align: left;
+          color: #000000;
+          max-width: 1000px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .op-narrow-banner .text-content {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          max-width: 500px;
+        }
+        .op-narrow-banner .detail{
+          margin-top: 10px;
+        }
+        .op-narrow-banner .price{
+          margin-top: 0px;
+        }
+        .op-narrow-banner .banner-button-box{
+          margin-top: 40px;
+
+        }
+        .op-narrow-banner .link-button{
+          margin-top: 10px;
+        }
+        .op-narrow-banner .info{
+          margin-top: 10px;
+        }
+        .op-narrow-banner .one-button{
+          height: 50px;
+          font-size: 16px;
+          line-height: 50px;
+          cursor: pointer;
+        }
+        .op-narrow-banner .link:hover{
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 737px){
+          .banner-column-text{
+            padding: 0 100px;
+          }
+          .op-narrow-banner .text-content {
+            max-width: 400px;
+          }
+
+          .op-narrow-banner .price{
+            margin-top: 0px;
+          }
+          .op-narrow-banner .banner-button-box{
+            margin-top: 30px;
+          }
+        }
+
+        @media screen and (max-width: 735px){
+          .op-narrow-banner .text-content {
+            width: 100%;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 30px;
+          }
+          .op-narrow-banner .text-content.bottom {
+             top: auto;
+             bottom: 30px;
+           }
+          .op-narrow-banner .banner-column-text {
+            text-align: center;
+          }
+          .op-narrow-banner .one-button{
+            height: 40px;
+            font-size: 14px;
+            line-height: 40px;
+          }
+          .op-narrow-banner .detail{
+            margin-top: 0px;
+          }
+          .op-narrow-banner .price{
+            margin-top: 0px;
+          }
+          .op-narrow-banner .banner-button-box{
+            margin-top: 20px;
+          }
+          .op-narrow-banner .link-button{
+            margin-top: 10px;
+          }
+          .op-narrow-banner .link{
+            font-size: 14px;
+          }
+          .op-narrow-banner .info{
+            margin-top: 10px;
+          }
+        }
+        /*文案响应式 end*/
+
+        .abs-layer{
+          position: absolute;
+          max-width: 500px;
+          width: 100%;
+          bottom: 6%;
+        }
+
+        @media screen and (max-width: 1200px) and (min-width: 737px){
+          .abs-layer {
+            max-width: 400px;
+            bottom: 50px;
+          }
+        }
+
+        @media screen and (max-width: 736px){
+          .abs-layer{
+            width: 80%;
+            left:50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+          }
+        }
+   .op-narrow-banner .narrow-banner-0{
+        position: relative;
+        width: 100%;
+        order: 2;
+    }
+   .op-narrow-banner .narrow-banner-0 .banner-column-text{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-0 .banner-column-text .link{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-0 .banner-column-text .link:hover, .op-narrow-banner .narrow-banner-0 .banner-column-text .link:active, .op-narrow-banner .narrow-banner-0 .banner-column-text .link:focus{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-1{
+        position: relative;
+        width: 100%;
+        order: 1;
+    }
+   .op-narrow-banner .narrow-banner-1 .banner-column-text{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-1 .banner-column-text .link{
+       color:white
+   }
+   .op-narrow-banner .narrow-banner-1 .banner-column-text .link:hover, .op-narrow-banner .narrow-banner-1 .banner-column-text .link:active, .op-narrow-banner .narrow-banner-1 .banner-column-text .link:focus{
+       color:white
+   }

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/submitOrder.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/pay.css}" />
+<script type="text/javascript" th:src="@{/js/jquery-1.8.2.min.js}"></script>
+<script th:src="@{/js/layer-v3.1.1/layer/layer.js}"></script>
+
+<script type="text/javascript" th:src="@{/js/order/common.js}"></script>
+<script type="text/javascript" th:src="@{/js/order/order.js}"></script>
+<style type="text/css">
+</style>
+
+<body>
+<div th:replace="user/head :: html"></div>
+	<div class="subm">
+		<div class="subm_info">
+			<div class="submSuccess1">
+				<script type="text/javascript" th:src="@{/css/付款成功/iconfont.js}"></script>
+				<script type="text/javascript" th:src="@{/css/支付2/iconfont.js}"></script>
+				<div class="paySucess_top">
+					<svg class="successPay_icon" aria-hidden="true">
+							<use xlink:href="#icon-ziyuan"></use>
+						</svg>
+				</div>
+				等待付款
+			</div>
+			<div class="submSuccess2">支付成功后，我们将尽快为你发货。请在 2
+				个小时内完成支付，超时订单将会取消。</div>
+		</div>
+		<div class="subm_main">
+			<div class="subm_title">订单信息</div>
+			<div class="subm_main_info">
+
+				订单编号：<span id="orderid">[[${order.id}]]</span> <br /> 联系电话： <span>[[${order.phone}]]</span>
+				<br /> 收货信息： <span>[[${order.addr}]]</span><br />
+				联系人：&nbsp;&nbsp;&nbsp; <span>[[${order.oname}]]</span><br />
+				<div style="height: 10px;"></div>
+			</div>
+			<div class="subm_title">商品清单</div>
+			<div class="subm_main_info">
+
+				<div class="orderItemMain">
+					<!--  -->
+					<div class="orderItem-item" th:each="i:${order.orderItems}">
+						<div class="orderItem-item-img">
+							<img th:src="|${i.product.photopath}|" />
+						</div>
+						<div class="orderItem-item-name">[[${i.product.pname}]]</div>
+						<div class="orderItem-item-val">
+							<div class="val-span">￥ [[${i.product.price}]]</div>
+							<div class="val-span">x[[${i.counts}]]</div>
+							<div class="val-span">￥ [[${i.subtotal}]]</div>
+						</div>
+					</div>
+					<!--  -->
+				</div>
+				<div style="height: 10px;"></div>
+			</div>
+		</div>
+		<div style="height: 15px; background-color: #efefef;"></div>
+		<div class="pay_type">
+			<div class="cart_title">支付方式</div>
+			<div class="payTypes">
+				<div class="iconitm">
+					<svg class="pay_icon" aria-hidden="true">
+							<use xlink:href="#icon-zhifubaozhifu"></use>
+						</svg>
+				</div>
+				<div class="iconitm">
+					<svg class="pay_icon_wx" aria-hidden="true">
+							<use xlink:href="#icon-weixinzhifu"></use>
+						</svg>
+				</div>
+				<div class="iconitm">
+					<svg class="pay_icon" aria-hidden="true">
+							<use xlink:href="#icon-wangyinzhifu"></use>
+						</svg>
+				</div>
+			</div>
+		</div>
+		<div class="pay_foot">
+			<div class="pay_total">
+				应付金额：<span id="P_total">[[${order.total}]]</span>
+			</div>
+			<div class="pay_btn">
+				<button class="button_jiesuan " th:onclick="pay([[${order.id}]])">立即支付</button>
+			</div>
+		</div>
+		<div style="height: 20px;"></div>
+	</div>
+	<div th:replace="user/foot :: html"></div>
+</body>
+</html>

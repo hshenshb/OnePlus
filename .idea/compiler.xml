@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="oneplus-service" />
+        <module name="oneplus-pojo" />
+        <module name="onepluspro" />
+        <module name="onepluscum" />
+        <module name="oneplus-mapper" />
+        <module name="oneplus-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="oneplus-mapper" target="1.5" />
+      <module name="oneplus-pojo" target="1.5" />
+      <module name="oneplus-service" target="1.5" />
+      <module name="oneplus-util" target="1.5" />
+      <module name="onepluscum" target="1.8" />
+      <module name="onepluspro" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="onepluscum" options="-parameters" />
+      <module name="onepluspro" options="-parameters" />
+    </option>
+  </component>
+</project>

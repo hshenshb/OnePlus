@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/oneplus-mapper/oneplus-mapper.iml" filepath="$PROJECT_DIR$/oneplus-mapper/oneplus-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oneplus-pojo/oneplus-pojo.iml" filepath="$PROJECT_DIR$/oneplus-pojo/oneplus-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oneplus-service/oneplus-service.iml" filepath="$PROJECT_DIR$/oneplus-service/oneplus-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oneplus-util/oneplus-util.iml" filepath="$PROJECT_DIR$/oneplus-util/oneplus-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onepluscum/onepluscum.iml" filepath="$PROJECT_DIR$/onepluscum/onepluscum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onepluspro/onepluspro.iml" filepath="$PROJECT_DIR$/onepluspro/onepluspro.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjetc.mapper.AdminOrderMapper">
+<select id="list" parameterType="string" resultType="com.tjetc.pojo.Orders">
+	select * from orders where id like '%${value}%'
+</select>
+<update id="send" parameterType="string">
+	update orders set state = 3 where id=#{value }
+</update>
+<update id="send2" parameterType="string">
+	update orders set state = 2 where id=#{value }
+</update>
+<update id="send3" parameterType="string">
+	update orders set state = 4 where id=#{value }
+</update>
+<update id="send5" parameterType="string">
+	update orders set state = 5 where id=#{value }
+</update>
+
+</mapper>

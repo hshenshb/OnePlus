@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjetc.mapper.AddInFoMapper">
+<select id="selectMren" parameterType="int" resultType="com.tjetc.pojo.AddrInfo">
+     select * from addrinfo where usid=#{value} and state=1
+</select>
+     <select id="select" parameterType="int" resultType="com.tjetc.pojo.AddrInfo" >
+	 select * from addrinfo where usid=#{value}
+
+	</select>
+
+
+     <select id="selectOne" parameterType="int" resultType="com.tjetc.pojo.AddrInfo" >
+	 select * from addrinfo where id=#{value}
+
+	</select>
+
+     <update id="updateState" parameterType="int" >
+	update addrinfo set state=1 where id=#{value}
+	</update>
+     <update id="updateState1" parameterType="map" >
+	update addrinfo set state=0 where id!=#{id} and usid=#{uid}
+	</update>
+     <update id="update" parameterType="com.tjetc.pojo.AddrInfo" >
+	update addrinfo set aname=#{aname},phone=#{phone},addr=#{addr} where id=#{id}
+	</update>
+     <delete id="delete" parameterType="int">
+	delete from addrinfo where id=#{value}
+	</delete>
+     <insert id="add" parameterType="com.tjetc.pojo.AddrInfo">
+	insert into addrInfo (aname,phone,addr,usid,state) values(#{aname},#{phone},#{addr},#{usid},#{state})
+	</insert>
+     <insert id="add1" parameterType="com.tjetc.pojo.User">
+	insert into addrInfo (aname,phone,addr,usid,state) values(#{username},#{phone},#{addr},#{id},1)
+	</insert>
+</mapper>

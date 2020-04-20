@@ -1,0 +1,119 @@
+.daohang {
+	top: 362.77px;
+	height: 50px;
+}
+.categor{
+	position:absolute;
+	width:100%;
+	font-weight: bold;
+	font-size: xx-large;
+	line-height: 362px;
+	text-align:center;
+	top:0px;
+	right:0px;
+	color: #f4feff;
+	font-family: "宋体";
+}
+.tip{
+	position:absolute;
+	width:1862px;
+	font-size:170px;
+	font-family:"宋体";
+	line-height:1000px;
+	text-align:center;
+}
+.head{
+width:100%;
+height: 362px;
+}
+.kuang {
+	background-color: #fff;
+	height: 2000px;
+	width: 100%;
+	float: left;
+}
+
+.sp1 {
+	position: relative;
+	width: 465px;
+	height: 555px;
+	background-color: #f7f7f7;
+	border: 0.2px solid #EEEEE0;
+	float: inherit;
+}
+
+.sp1 img {
+}
+
+.sp1:hover {
+	transition: 0.5s;
+	background-color: #fff;
+}
+
+.xp {
+	position: absolute;
+	width: 10%;
+	height: 5%;
+	top: 3%;
+	right: 15%;
+	background-color: #ee3b3b;
+}
+
+.xp1 {
+	position: absolute;
+	width: 10%;
+	height: 5%;
+	top: 3%;
+	right: 3%;
+	background-color: #ee3b3b;
+}
+
+.xpzt {
+	position: absolute;
+	color: white;
+	padding-left: 17%;
+	top: 17%;
+}
+
+.pname {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	text-align:center;
+/* 	border: 1px solid black; */
+}
+
+.ppname {
+	color: black;
+	text-align:center;
+	font-size:18px;
+	line-height: 50px;
+	font-family:"宋体";
+	font-weight:bold;
+}
+
+.pprice {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	bottom:20px;
+	text-align:center;
+/* 	border: 1px solid black; */
+}
+
+.ppprice {
+	color: red;
+	top: 50px;
+	text-align:center;
+	font-size:18px;
+	line-height: 50px;
+	font-weight:bold;
+}
+.ppprice2{
+	color: gray;
+	top: 50px;
+	text-align:center;
+	font-size:18px;
+	line-height: 50px;
+	
+}

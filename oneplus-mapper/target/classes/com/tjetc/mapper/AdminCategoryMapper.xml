@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tjetc.mapper.AdminCategoryMapper">
+	<select id="validname" parameterType="string" resultType="com.tjetc.pojo.Category" >
+	select * from category where cname=#{value}
+	
+	</select>
+	<select id="getByName" parameterType="string" resultType="com.tjetc.pojo.Category" >
+	select * from category where cname=#{value}
+	
+	</select>
+	<select id="getAll" parameterType="string" resultType="com.tjetc.pojo.Category" >
+	select * from category where cname like '%${value}%'
+	
+	</select>
+	<select id="getTrueAll" resultType="com.tjetc.pojo.Category" >
+	select * from category
+
+	</select>
+
+		<insert id="add" parameterType="com.tjetc.pojo.Category">
+	insert into category(cname,photo) values(#{cname},#{photo})
+	</insert>
+	<select id="getById" parameterType="int" resultType="com.tjetc.pojo.Category" >
+	select * from category where id = #{value}
+	
+	</select>
+	<select id="getByScid" parameterType="int" resultType="com.tjetc.pojo.Category" >
+	select c.* from category c,secondcategory sc where sc.id = #{value} and sc.cid=c.id
+
+	</select>
+	<update id="updatecategory" parameterType="com.tjetc.pojo.Category" >
+		update category 
+<set>
+<if test="cname!=null and cname!= ''">
+cname=#{cname},
+</if>
+<if test="photo!=null and photo!= ''">
+photo=#{photo},
+</if>
+</set>
+ where id=#{id}
+	</update>
+		<delete id="delete" parameterType="int">
+	delete from category where id=#{value}
+	</delete>
+	<!--  
+	<select id="getById" parameterType="int" resultType="com.tjetc.pojo.Admin" >
+	select * from admin where id = #{value}
+	
+	</select>
+ 
+	<update id="updateAdmin" parameterType="com.tjetc.pojo.Admin" >
+		update admin set username=#{username},password=#{password},email=#{email},power=#{power} where id=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+	delete from admin where id=#{value}
+	</delete>
+	 -->
+
+</mapper>

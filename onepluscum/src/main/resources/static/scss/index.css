@@ -1,0 +1,144 @@
+.zffs {
+	width: 1.3em;
+	height: 1.3em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+
+.kuang {
+	position: relative;
+	width: 100%;
+	height: 2200px;
+	background-color: rgba(246, 246, 246, 1);
+}
+
+.t1, .t2 {
+	width: 80px;
+	height: 80px;
+	border: 1px solid gainsboro;
+	cursor: pointer;
+}
+
+#dt1 img {
+	width: 500px;
+	height: 500px;
+}
+
+.part-left {
+	position: absolute;
+	top: 3%;
+	right: 50%;
+	height: 40%;
+}
+
+.part-right {
+	top: 3%;
+	position: absolute;
+	left: 52%;
+	height: 40%;
+	width: 50%;
+}
+
+.dt2 {
+	position: absolute;
+	left: 35%;
+}
+
+#gocar {
+	width: 210px;
+}
+
+.title-wrapper h1 {
+	font-weight: bolder;
+	margin-top: 100px;
+	margin-bottom: 30px;
+}
+
+#gocar {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.guarantee-list {
+	margin-top: 20px;
+}
+
+.dt2 :hover {
+	cursor: pointer;
+	background-color: white;
+}
+
+.dt1 img {
+	transition: 1s;
+}
+
+.xqpj {
+	position: absolute;
+	height: 3%;
+	width: 100%;
+	top: 45%;
+	background-color: white;
+}
+
+.xiangqing {
+	position: absolute;
+	height: 52%;
+	width: 100%;
+	top: 48%;
+}
+
+.text1 {
+	position: absolute;
+	line-height: 100%;
+	width: 100%;
+	left: 48%;
+	/*border: 1px solid black;*/
+}
+
+.text1 h2 {
+	color: black;
+	font-size: xx-large;
+	font-weight: bolder;
+}
+
+.xqtp img {
+	width: 100%;
+	height: 800px;
+}
+
+.discrip {
+	position:absolute;
+	color: white;
+	width:100%;
+	font-weight: bolder;
+	font-size: x-large;
+	line-height: 800px;
+	text-align:center;
+	top:0px;
+	height:800px;
+}
+
+.lmore {
+	position: absolute;
+	color: white;
+	width:100%;
+	font-weight: bolder;
+	font-size: x-large;
+	top: 400px;
+	text-align:center;
+	line-height:400px;
+	height:400px: 
+}
+.lmore :hover{
+	cursor: pointer;
+	background-color: black;
+}
+.clearfix dt {
+	font-weight: bold;
+}
+
+.clearfix {
+	font-size: 15px;
+	margin: 20px;
+}
