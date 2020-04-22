@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.tjetc.mapper.OrderMapper">
     <select id="list" parameterType="map" resultType="com.tjetc.pojo.Orders">
-        select * from orders where id like '%${oid}%' and usid= #{uid} ORDER BY ordertime desc
+        select * from orders where id like '%${oid}%' and usid= #{uid} and state !=0 ORDER BY ordertime desc
     </select>
     <insert id="add" parameterType="com.tjetc.pojo.Orders">
         insert into orders(id,oname,phone,addr,usid,total,ordertime,state) values (#{id},#{oname},#{phone},#{addr},#{usid},#{total},#{ordertime},1)

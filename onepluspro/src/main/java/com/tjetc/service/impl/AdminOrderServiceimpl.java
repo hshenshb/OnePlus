@@ -51,4 +51,10 @@ public class AdminOrderServiceimpl implements AdminOrderService {
     public void send5(String oid) {
         adminOrderMapper.send5(oid);
     }
+
+    @Override
+    public void delOrder(String oid) {
+
+        adminOrderMapper.delOrder(oid);
+    }
 }

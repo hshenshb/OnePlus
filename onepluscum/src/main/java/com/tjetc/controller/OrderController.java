@@ -265,5 +265,13 @@ public class OrderController {
         adminOrderService.send5(oid);
         return "redirect:/order/list";
     }
+    @RequestMapping("/delOrder")
+    public String delOrder(HttpServletRequest request, Model model) {
+        String oid = request.getParameter("oid");
+        oid = oid == null ? "" : oid;
+
+        adminOrderService.delOrder(oid);
+        return "redirect:/order/list";
+    }
 
     }

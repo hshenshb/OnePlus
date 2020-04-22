@@ -66,8 +66,8 @@
 							<span class="orderItemTitle_sp"> 下单时间: </span> <span id="">
 								[[${o.ordertime}]] </span> <span class="orderItemTitle_sp">
 								订单编号: </span> <span id=""> [[${o.id}]] </span>
-							<div class="delBtn"
-								th:onclick="delOrder([[${o.id}]],[[${o.state}]])">x</div>
+
+
 						</div>
 						<div class="orderItemMain">
 							<!-- 遍历 -->
@@ -80,6 +80,7 @@
 									<div class="val-span">￥ [[${i.p.price}]]</div>
 									<div class="val-span">[[${i.counts}]]</div>
 									<div class="val-span">￥[[${i.subtotal}]]</div>
+
 								</div>
 							</div>
 						</div>
@@ -127,6 +128,11 @@
 									<button class="button_jiesuan"
 										th:onclick="querenshouhuo([[${o.id}]])">确认收货</button>
 								</div>
+								<div class="btn">
+									<button class="button_jiesuan"
+											th:onclick="delOrder([[${o.id}]])">删除订单</div>
+								</div>
+
 							</div>
 						</div>
 						<div style="height: 30px; width: 100%;"></div>
@@ -206,6 +212,9 @@
 	}
 	function quxiao(id) {
 		location.href = "/order/quxiao?oid="+ id;
+	}
+	function delOrder(id) {
+		location.href = "/order/delOrder?oid="+ id;
 	}
 
 </script>

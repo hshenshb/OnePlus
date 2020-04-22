@@ -18,5 +18,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <update id="send5" parameterType="string">
 	update orders set state = 5 where id=#{value }
 </update>
+<update id="delOrder" parameterType="string">
+	update orders set state = 0 where id=#{value}
+</update>
+
 
 </mapper>

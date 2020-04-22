@@ -17,4 +17,6 @@ public interface AdminOrderMapper {
     void send3(String oid);
 
     void send5(String oid);
+
+    void delOrder(String oid);
 }
