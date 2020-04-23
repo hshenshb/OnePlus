@@ -138,27 +138,28 @@
 						<div style="height: 30px; width: 100%;"></div>
 					</div>
 					<!--===================== -->
-					<div style="height: 10px; width: 100%;"></div>
+					<div style="height: 10px; width: 100%;">
+						<div class="footFenye" th:if="${!isNull}">
+							<ul class="pagination">
+								<button href="javascript:void(0)" onclick="fenye(1)">首页</button>
+								<button href="javascript:void(0)"
+										th:onclick="|fenye(${pageInfo.prePage==0?1:pageInfo.prePage})|">«</button>
+								<font th:text="${pageInfo.pageNum}"></font>
+
+								/
+								<font th:text="${pageInfo.pages}"></font>
+								<button href="javascript:void(0)"
+										th:onclick="|fenye(${pageInfo.nextPage==0?pageInfo.pages:pageInfo.nextPage})|">»</button>
+								<button href="javascript:void(0)"
+										th:onclick="|fenye(${pageInfo.pages})|">尾页</button>
+							</ul>
+						</div>
 				</div>
 
 
 
 				<!-- 右边 下 -->
-				<div class="footFenye" th:if="${!isNull}">
-					<ul class="pagination">
-						<button href="javascript:void(0)" onclick="fenye(1)">首页</button>
-						<button href="javascript:void(0)"
-							th:onclick="|fenye(${pageInfo.prePage==0?1:pageInfo.prePage})|">«</button>
-						<font th:text="${pageInfo.pageNum}"></font>
 
-						/
-						<font th:text="${pageInfo.pages}"></font>
-						<button href="javascript:void(0)"
-							th:onclick="|fenye(${pageInfo.nextPage==0?pageInfo.pages:pageInfo.nextPage})|">»</button>
-						<button href="javascript:void(0)"
-							th:onclick="|fenye(${pageInfo.pages})|">尾页</button>
-					</ul>
-				</div>
 
 
 				<!-- 空 -->
