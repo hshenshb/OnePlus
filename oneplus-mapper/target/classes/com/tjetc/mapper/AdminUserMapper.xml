@@ -7,7 +7,7 @@
         select * from users where username like '%${value}%'
     </select>
     <select id="validnameAdd" parameterType="string" resultType="com.tjetc.pojo.User">
-        select * from users where username = #{value}
+        select * from users where username = #{value}  and state !=0
     </select>
     <insert id="add">
         insert into users(username,password,uname,email,phone,addr,state) values (#{username},#{password},#{uname},#{email},#{phone},#{addr},#{state})
